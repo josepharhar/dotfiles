@@ -3,4 +3,13 @@ startup_message off
 hardstatus alwayslastline
 shelltitle 'bash'
 
-hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW %=%C%A %m-%d-%y"
+
+# hardstatus string info
+# %{= wK} bright white (W) on bright black (K) and current text styles (=)
+# %H hostname
+# 
+
+
+
+#hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
