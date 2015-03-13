@@ -1,9 +1,11 @@
 autodetach on
 startup_message off
 hardstatus alwayslastline
-shelltitle 'bash'
+#shelltitle 'bash'
 
-hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW %=%C%A %m-%d-%y"
+hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'
+
+# hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW %=%C%A %m-%d-%y"
 
 # hardstatus string info
 # %{= wK} bright white (W) on bright black (K) and current text styles (=)
