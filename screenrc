@@ -5,6 +5,8 @@ hardstatus alwayslastline
 
 hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'
 
+#hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'
+
 # hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW %=%C%A %m-%d-%y"
 
 # hardstatus string info
