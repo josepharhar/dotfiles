@@ -31,8 +31,8 @@ set hlsearch
   set showcmd               " Show (partial) command in status line.
   set showmatch             " Show matching brackets.
   set softtabstop=4         " Why are tabs so big?  This fixes it
-  set textwidth=0           " Don't wrap words by default
-  set textwidth=80          " This wraps a line with a break when you reach 80 chars
+  "set textwidth=0           " Don't wrap words by default
+  "set textwidth=80          " This wraps a line with a break when you reach 80 chars
   set virtualedit=block     " let blocks be in virutal edit mode
   set wildmenu              " This is used with wildmode(full) to cycle options
 
