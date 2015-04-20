@@ -1,0 +1,7 @@
+arhar () {
+    echo "dotfiles loaded";
+}
+
+c () {
+    gcc $1 && ./a.out;
+}
