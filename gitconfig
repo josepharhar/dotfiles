@@ -5,6 +5,7 @@
 	ui = auto
 [core]
         pager = less -FMRiX
+        excludesfile = ~/dotfiles/gitignore_global
 [push]
 	default = simple
 [alias]
