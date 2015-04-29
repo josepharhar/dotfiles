@@ -3,6 +3,8 @@
 	name = Joseph Arhar
 [color]
 	ui = auto
+[core]
+        pager = less -FMRiX
 [push]
 	default = simple
 [alias]
