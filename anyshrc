@@ -1,3 +1,6 @@
+# Aliases
+alias gits="git status"
+
 arhar () {
     echo "dotfiles loaded";
 }
