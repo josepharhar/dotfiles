@@ -1,6 +1,6 @@
 # Aliases
 alias gits="git status"
-alias ls="ls --color=auto"
+alias ls="ls --color=auto -AF"
 alias ll="ls -l"
 alias l="ll"
 
