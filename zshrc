@@ -13,3 +13,5 @@ PROMPT='%{$fg_bold[cyan]%}%M%{$fg_bold[white]%} ${ret_status}'
 #ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 #ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 #ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+source dotfiles/anyshrc

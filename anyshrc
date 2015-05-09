@@ -1,5 +1,8 @@
 # Aliases
 alias gits="git status"
+alias ls="ls --color=auto"
+alias ll="ls -l"
+alias l="ll"
 
 arhar () {
     echo "dotfiles loaded";
