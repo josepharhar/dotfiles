@@ -9,6 +9,6 @@ arhar () {
     echo "dotfiles loaded";
 }
 
-c () {
+ccc () {
     gcc $1 && ./a.out;
 }
