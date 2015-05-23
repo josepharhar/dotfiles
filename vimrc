@@ -1,5 +1,6 @@
 " Joey vim options
 set hlsearch
+syntax on
 
 " Standard vim options
   set autoindent            " always set autoindenting on
