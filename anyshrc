@@ -6,6 +6,7 @@ alias ll="ls -l"
 alias l="ll"
 alias c="clear"
 alias g="git"
+alias ssx="DISPLAY=:0.0 ssh -CY"
 
 arhar () {
     echo "dotfiles loaded";
