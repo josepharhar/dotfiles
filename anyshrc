@@ -5,6 +5,7 @@ alias la="ls -A"
 alias ll="ls -l"
 alias l="ll"
 alias c="clear"
+alias g="git"
 
 arhar () {
     echo "dotfiles loaded";
