@@ -1,21 +1,4 @@
 autodetach on
 startup_message off
-hardstatus alwayslastline
-#shelltitle 'bash'
 
-#hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'
-
-hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %=%C%<"
-
-#hardstatus string '%{= kG}%{C}Screen: %{c}%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{C} %d-%m %{W}%c %{g}]'
-
-# hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW %=%C%A %m-%d-%y"
-
-# hardstatus string info
-# %{= wK} bright white (W) on bright black (K) and current text styles (=)
-# %H hostname
-# 
-
-
-
-#hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %=%C %y.%m.%d%<"
