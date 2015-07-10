@@ -8,6 +8,7 @@ alias l="ll"
 alias c="clear"
 alias g="git"
 alias ssx="DISPLAY=:0.0 ssh -CY"
+alias amend="git add . && git commit --amend --no-edit"
 
 arhar () {
     echo "dotfiles loaded";
