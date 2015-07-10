@@ -1,6 +1,6 @@
 autoload -U colors && colors
-PS1="%{${fg[cyan]}%}%B[%{${fg[green]}%}%m%{${fg[cyan]}%}] %b%{${fg[default]}%}"
-RPROMPT="%{${fg[cyan]}%}%B%(7~,.../,)%6~%b%{${fg[default]}%}"
+PS1="%{${fg[green]}%}%B[%{${fg[blue]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~%{${fg[green]}%}] %b%{${fg[default]}%}"
+#RPROMPT="%B%(7~,.../,)%6~%b}"
 
 autoload -U compinit
 compinit
