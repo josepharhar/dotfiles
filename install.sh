@@ -6,7 +6,7 @@ then
 
     echo "installing apt-cyg"
     lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg && install apt-cyg /bin
-     
+
     echo "installing zsh"
     apt-cyg install zsh && mkpasswd -c | sed -e 'sX/bashX/zshX' | tee -a /etc/passwd
 
@@ -18,7 +18,13 @@ then
 
     echo "installing git"
     apt-cyg install git
+fi
 
+echo "cloning dotfiles"
+git clone https://github.com/josepharhar/dotfiles.git $HOME/dotfiles
+
+if [ `uname -o` = "Cygwin" ]
+then
     echo "installing minttyrc"
     if [ -f $HOME/.minttyrc ]
     then
