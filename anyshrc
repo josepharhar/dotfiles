@@ -9,6 +9,8 @@ alias c="clear"
 alias g="git"
 alias ssx="DISPLAY=:0.0 ssh -CY"
 alias amend="git add . && git commit --amend --no-edit"
+alias clag="c && g lag"
+alias cl="c && l"
 
 arhar () {
     echo "dotfiles loaded";
