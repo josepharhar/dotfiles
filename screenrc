@@ -1,4 +1,4 @@
 autodetach on
 startup_message off
 
-hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %=%y-%m-%d %C%<"
+hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %=%Y-%m-%d %C%<"
