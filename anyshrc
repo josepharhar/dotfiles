@@ -13,6 +13,8 @@ alias clag="c && g lag"
 alias cl="c && l"
 alias clags="clag && gits"
 alias clgs="clags"
+alias lef="less +F"
+alias mc="java -Xms512M -Xmx6G -jar"
 
 arhar () {
     echo "dotfiles loaded";
