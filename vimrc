@@ -1,6 +1,10 @@
 " Joey vim options
 set hlsearch
 syntax on
+nmap <C-l> :set invnumber<CR>
+nmap <C-n> :tabnext<CR>
+nmap <C-p> :tabprevious<CR>
+nmap <C-b> :!./build.sh<CR>
 
 " Standard vim options
   set autoindent            " always set autoindenting on
@@ -48,4 +52,3 @@ function! SetTitle()
     endif
   endif
 endfunction
-
