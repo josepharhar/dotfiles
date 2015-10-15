@@ -108,3 +108,8 @@ then
     mv $HOME/.gitignore_global $HOME/.gitignore_global.backup
 fi
 ln -s $HOME/dotfiles/gitignore_global $HOME/.gitignore_global
+
+#For the shell to change you need to logout and log back in
+echo ""
+echo -e "${RED}## ${BLUE}For changes to take effect, you may need to log out. ${RED}##${NC}"
+echo ""
