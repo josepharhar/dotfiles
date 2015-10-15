@@ -1,7 +1,6 @@
 #/bin/sh
 
-if [ `uname -o` = "Cygwin" ]
-then
+if [ `uname -o` = "Cygwin" ]; then
     echo "setting up for Cygwin"
 
     echo "installing apt-cyg"
@@ -18,21 +17,27 @@ then
 
     echo "installing git"
     apt-cyg install git
+elif [[ 'uname' = "Linux" ]]; then
+    #check specific distro
+    if [ -f /etc/arch-release ] ; then
+        #distro is based on arch
+        echo "Setting up for Arch"
+    elif [ -f /etc/debian-release ] ; then
+        #distro based on debian (ubuntu)
+        echo "Setting up for debian based (ubuntu)"
+    fi
 fi
 
 echo "cloning dotfiles"
 git clone https://github.com/josepharhar/dotfiles.git $HOME/dotfiles
 
-if [ `uname -o` = "Cygwin" ]
+echo "installing minttyrc"
+if [ -f $HOME/.minttyrc ]
 then
-    echo "installing minttyrc"
-    if [ -f $HOME/.minttyrc ]
-    then
-        echo "found old minttyrc, backing up to .minttyrc.backup"
-        mv $HOME/.minttyrc $HOME/.minttyrc.backup
-    fi
-    ln -s $HOME/dotfiles/minttyrc $HOME/.minttyrc
+    echo "found old minttyrc, backing up to .minttyrc.backup"
+    mv $HOME/.minttyrc $HOME/.minttyrc.backup
 fi
+ln -s $HOME/dotfiles/minttyrc $HOME/.minttyrc
 
 echo "installing zshrc"
 if [ -f $HOME/.zshrc ]
