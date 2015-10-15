@@ -18,7 +18,7 @@ if [ `uname -o` = "Cygwin" ]; then
     echo "installing git"
     apt-cyg install git
 
-elif [[ 'uname' = "Linux" ]]; then
+elif [[ `uname -o` = "GNU/Linux" ]]; then
     #check specific distro
     if [ -f /etc/arch-release ] ; then
         #distro is based on arch
