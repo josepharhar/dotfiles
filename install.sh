@@ -29,7 +29,7 @@ elif [ `uname -o` = "GNU/Linux" ]; then
         echo -e "${BLUE}Setting up for ${RED}Arch${NC}"
 
         echo -e "${BLUE}Installing zsh${NC}"
-        sudo pacman -S zsh && mkpasswd -c | sed -e 'sX/bashX/zshX' | tee -a /etc/passwd
+        sudo pacman -S zsh && chsh -s /bin/zsh
 
         echo -e "${BLUE}Installing vim${NC}"
         sudo pacman -S vim
@@ -45,7 +45,7 @@ elif [ `uname -o` = "GNU/Linux" ]; then
         echo -e "${BLUE}Setting up for ${RED}debian${NC}"
 
         echo -e "${BLUE}Installing zsh${NC}"
-        sudo apt-get install zsh && mkpasswd -c | sed -e 'sX/bashX/zshX' | tee -a /etc/passwd
+        sudo apt-get install zsh && chsh -s /bin/zsh
         
         echo -e "${BLUE}Installing vim${NC}"
         sudo apt-get install vim
