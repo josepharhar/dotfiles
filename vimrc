@@ -32,10 +32,10 @@ nmap <C-b> :!./build.sh<CR>
   set ttimeoutlen=100       " timeout on key-codes after 100ms
   set ruler                 " the ruler on the bottom is useful
   set scrolloff=1           " dont let the curser get too close to the edge
-  set shiftwidth=4          " Set indention level to be the same as softtabstop
+  set shiftwidth=3          " Set indention level to be the same as softtabstop
   set showcmd               " Show (partial) command in status line.
   set showmatch             " Show matching brackets.
-  set softtabstop=4         " Why are tabs so big?  This fixes it
+  set softtabstop=3         " Why are tabs so big?  This fixes it
   "set textwidth=0           " Don't wrap words by default
   "set textwidth=80          " This wraps a line with a break when you reach 80 chars
   set virtualedit=block     " let blocks be in virutal edit mode
