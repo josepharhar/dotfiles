@@ -16,6 +16,8 @@ alias clgs="clags"
 alias less="less -R"
 alias lef="less +F"
 alias mc="java -Xms512M -Xmx6G -jar"
+alias shut="sudo /sbin/shutdown -h now"
+alias sus="sudo /usr/sbin/pm-suspend"
 
 arhar () {
     echo "dotfiles loaded";
@@ -24,3 +26,11 @@ arhar () {
 ccc () {
     gcc $1 && ./a.out;
 }
+
+# Disable Beep
+if [ -n "$DISPLAY" ]; then
+   xset b off
+fi
+
+# Add sbin folders to path
+PATH=$PATH:/sbin:/usr/sbin
