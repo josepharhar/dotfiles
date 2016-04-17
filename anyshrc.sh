@@ -22,7 +22,7 @@ alias grepa="grep -rni '.' -e"
 alias sse="ssh arhar@Arhar-Arch-VM.local"
 alias asdf="echo \"dotfiles loaded\""
 alias eclipse="SWT_GTK3=0 eclipse"
-alias db="mysql jarhar"
+alias db="mysql jarhar -h csc-db0 -ujarhar -p"
 alias bb="mvn install"
 
 hex2dec () {
