@@ -18,6 +18,8 @@ alias lef="less +F"
 alias mc="java -Xms512M -Xmx6G -jar"
 alias shut="sudo /sbin/shutdown -h now"
 alias sus="sudo /usr/sbin/pm-suspend"
+alias grepa="grep -rnwi '.' -e"
+alias sse="ssh arhar@Arhar-Ubuntu-VM.local"
 
 arhar () {
     echo "dotfiles loaded";
