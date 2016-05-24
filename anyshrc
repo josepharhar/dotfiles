@@ -20,13 +20,10 @@ alias shut="sudo /sbin/shutdown -h now"
 alias sus="sudo /usr/sbin/pm-suspend"
 alias grepa="grep -rni '.' -e"
 alias sse="ssh arhar@Arhar-Ubuntu-VM.local"
+alias asdf="dotfiles loaded";
 
-arhar () {
-    echo "dotfiles loaded";
-}
-
-ccc () {
-    gcc $1 && ./a.out;
+hex2dec () {
+   echo $((16#$1))
 }
 
 # Disable Beep
