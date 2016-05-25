@@ -52,3 +52,6 @@ function! SetTitle()
     endif
   endif
 endfunction
+
+" Run it every time we change buffers
+autocmd BufEnter,BufFilePost * call SetTitle()
