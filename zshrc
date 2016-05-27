@@ -34,5 +34,23 @@ SAVEHIST=15000                 # unique events guarenteed
 HISTFILE=$HOME/.zsh_history
 setopt histignoredups          # ignore duplicates of the previous event
 
+# vim
+bindkey -v
+bindkey '' up-history
+bindkey '' down-history
+bindkey '' backward-delete-char
+bindkey '' backward-delete-char
+bindkey '' backward-kill-word
+#bindkey '' history-incremental-search-backword
+bindkey '' end-of-line
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
 # non-zsh configuration
 source $HOME/dotfiles/anyshrc.sh
