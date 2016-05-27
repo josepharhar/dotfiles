@@ -4,4 +4,4 @@ bind 'set completion-ignore-case on'
 
 alias reload=". $HOME/.bashrc"
 
-source $HOME/dotfiles/anyshrc
+source $HOME/dotfiles/anyshrc.sh

@@ -1,7 +1,9 @@
+# Prompt
 autoload -U colors && colors
 PS1="%{${fg[green]}%}%B[%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~%{${fg[green]}%}] %b%{${fg[default]}%}"
 #RPROMPT="%B%(7~,.../,)%6~%b}"
 
+# Autocompletion
 autoload -U compinit
 compinit
 zstyle ':completion:*' completer _expand _complete _approximate
@@ -14,10 +16,23 @@ zstyle ':completion:*' use-compctl true
 zstyle ':completion:*:(vim|vi):*' ignored-patterns '*.(o|out|exe|swap|swp|~|stackdump|class)'
 zstyle ':completion:*:(javac):*' file-patterns '*.java'
 
-typeset -ga precmd_functions
-typeset -ga preexec_functions
-
+# Aliases
 alias reload=". $HOME/.zshrc"
 
-source $HOME/dotfiles/auto_title_screens
-source $HOME/dotfiles/anyshrc
+# Automatic screen titles
+typeset -ga precmd_functions
+typeset -ga preexec_functions
+source $HOME/dotfiles/auto_title_screens.zsh
+
+# History
+setopt EXTENDED_HISTORY        # store time in history
+setopt HIST_EXPIRE_DUPS_FIRST  # unique events are more useful
+setopt HIST_VERIFY             # Make those history commands nice
+setopt INC_APPEND_HISTORY      # immediatly insert history into history file
+HISTSIZE=16000                 # spots for duplicates/uniques
+SAVEHIST=15000                 # unique events guarenteed
+HISTFILE=$HOME/.zsh_history
+setopt histignoredups          # ignore duplicates of the previous event
+
+# non-zsh configuration
+source $HOME/dotfiles/anyshrc.sh

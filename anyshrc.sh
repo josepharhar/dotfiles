@@ -20,7 +20,7 @@ alias shut="sudo /sbin/shutdown -h now"
 alias sus="sudo /usr/sbin/pm-suspend"
 alias grepa="grep -rni '.' -e"
 alias sse="ssh arhar@Arhar-Ubuntu-VM.local"
-alias asdf="dotfiles loaded"
+alias asdf="echo \"dotfiles loaded\""
 alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
 
