@@ -22,6 +22,7 @@ alias grepa="grep -rni '.' -e"
 alias sse="ssh arhar@Arhar-Ubuntu-VM.local"
 alias asdf="dotfiles loaded"
 alias eclipse="SWT_GTK3=0 eclipse"
+alias db="mysql jarhar"
 
 hex2dec () {
    echo $((16#$1))
