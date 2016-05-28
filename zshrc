@@ -17,7 +17,7 @@ zstyle ':completion:*:(vim|vi):*' ignored-patterns '*.(o|out|exe|swap|swp|~|stac
 zstyle ':completion:*:(javac):*' file-patterns '*.java'
 
 # Aliases
-alias reload=". $HOME/.zshrc"
+alias reload=". $HOME/.zshrc && echo \"dotfiled reloaded\""
 
 # Automatic screen titles
 typeset -ga precmd_functions
