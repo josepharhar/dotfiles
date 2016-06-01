@@ -19,10 +19,11 @@ alias mc="java -Xms512M -Xmx6G -jar"
 alias shut="sudo /sbin/shutdown -h now"
 alias sus="sudo /usr/sbin/pm-suspend"
 alias grepa="grep -rni '.' -e"
-alias sse="ssh arhar@Arhar-Ubuntu-VM.local"
+alias sse="ssh arhar@Arhar-Arch-VM.local"
 alias asdf="echo \"dotfiles loaded\""
 alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
+alias bb="mvn install"
 
 hex2dec () {
    echo $((16#$1))

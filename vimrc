@@ -6,6 +6,9 @@ nmap <C-n> :tabnext<CR>
 nmap <C-p> :tabprevious<CR>
 nmap <C-b> :!./build.sh<CR>
 
+" Bold Fonts
+set bg=dark
+
 " Standard vim options
   set autoindent            " always set autoindenting on
   set backspace=2           " allow backspacing over everything in insert mode
