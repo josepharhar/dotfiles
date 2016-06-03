@@ -47,9 +47,9 @@ set bg=dark
 "When editing a file, make screen display the name of the file you are editing
 function! SetTitle()
   if $TERM =~ "^screen"
-    let l:title = 'vi: ' . expand('%:t')
+    let l:title = 'vim ' . expand('%:t')
 
-    if (l:title != 'vi: __Tag_List__')
+    if (l:title != 'vim __Tag_List__')
       let l:truncTitle = strpart(l:title, 0, 15)
       silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
     endif
