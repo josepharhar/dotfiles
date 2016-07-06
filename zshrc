@@ -1,6 +1,7 @@
 # Prompt
 autoload -U colors && colors
-PS1="%{${fg[green]}%}%B[%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~%{${fg[green]}%}] %b%{${fg[default]}%}"
+PS1="%B%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~ %{${fg[white]}%}%% %b"
+#PS1="%{${fg[green]}%}%B[%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~%{${fg[green]}%}] %b%{${fg[default]}%}"
 #RPROMPT="%B%(7~,.../,)%6~%b}"
 
 # Autocompletion
@@ -33,6 +34,11 @@ HISTSIZE=16000                 # spots for duplicates/uniques
 SAVEHIST=15000                 # unique events guarenteed
 HISTFILE=$HOME/.zsh_history
 setopt histignoredups          # ignore duplicates of the previous event
+
+# Keychain
+#if [ -x "$(command -v keychain)" ] && [ -f $HOME/.ssh/id_rsa ]; then
+#    eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
+#fi
 
 # non-zsh configuration
 source $HOME/dotfiles/anyshrc.sh

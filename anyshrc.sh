@@ -26,9 +26,18 @@ alias db="mysql jarhar"
 alias bb="mvn install"
 alias gc="git checkout"
 alias gcb="git checkout -b"
+alias ssa="eval `ssh-agent` && ssh-add"
+
+kc () {
+    kc="eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)"
+}
 
 hex2dec () {
    echo $((16#$1))
+}
+
+dec2hex() {
+    printf "%x\n" $1
 }
 
 # Disable Beep
