@@ -1,7 +1,6 @@
 # Prompt
 autoload -U colors && colors
-local ret_status="%(?:%{$fg_bold[green]%}%%:%{$fg_bold[red]%}%%)"
-PS1="%B%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~ ${ret_status} %b"
+PS1="%B%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~ $fg_bold[green]%% %b"
 #PS1="%{${fg[green]}%}%B[%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~%{${fg[green]}%}] %b%{${fg[default]}%}"
 #RPROMPT="%B%(7~,.../,)%6~%b}"
 
