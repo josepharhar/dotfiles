@@ -12,9 +12,9 @@ alias reload=". $HOME/.bashrc && echo \"dotfiles reloaded\""
 # History
 shopt -s histappend # append history into history file
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND" # immediatly insert history into history file
-HISTFILESIZE=16000             # spots for duplicates/uniques
-HISTSIZE=15000                 # unique events guarenteed
-HISTCONTROL="${HISTCONTROL:-}:ignoredups" # ignore duplicates of the previous event
+HISTFILESIZE=400000000 # "Don't lost any history! Lest we be doomed to repeat work." -eriq-augustine
+HISTSIZE=15000 # unique events guarenteed
+HISTCONTROL="${HISTCONTROL:-}:ignoredups:ignorespace" # ignore duplicates of the previous event
 
 # bind -m vi
 
