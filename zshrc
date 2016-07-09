@@ -35,10 +35,8 @@ SAVEHIST=15000                 # unique events guarenteed
 HISTFILE=$HOME/.zsh_history
 setopt histignoredups          # ignore duplicates of the previous event
 
-# Keychain
-#if [ -x "$(command -v keychain)" ] && [ -f $HOME/.ssh/id_rsa ]; then
-#    eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
-#fi
-
 # non-zsh configuration
 source $HOME/dotfiles/anyshrc.sh
+
+# Keychain
+kcstr

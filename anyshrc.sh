@@ -28,8 +28,11 @@ alias gc="git checkout"
 alias gcb="git checkout -b"
 alias ssa="eval `ssh-agent` ssh-add"
 
-kc () {
-    kc="eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)"
+kcstr () {
+    eval $(keychain --eval --quiet)
+}
+kcadd () {
+    eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
 }
 
 hex2dec () {
