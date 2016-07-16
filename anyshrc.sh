@@ -29,7 +29,9 @@ alias gcb="git checkout -b"
 alias ssa="eval `ssh-agent` ssh-add"
 
 kcstr () {
-    eval $(keychain --eval --quiet)
+    if [ -x "$(command -v keychain)" ] && [ -f $HOME/.ssh/id_rsa ]; then
+        eval $(keychain --eval --quiet)
+    fi
 }
 kcadd () {
     eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
