@@ -26,7 +26,15 @@ alias db="mysql jarhar"
 alias bb="mvn install"
 alias gc="git checkout"
 alias gcb="git checkout -b"
-alias ssa="eval `ssh-agent` ssh-add"
+#alias ssa="eval `ssh-agent` ssh-add"
+alias ssa="ssh -A"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias gre="git reset"
+alias greh="git reset --hard"
+alias gdf="git diff"
+alias gdfn="git diff --numstat"
+alias gdfh="git diff HEAD^"
 
 kcstr () {
     if [ -x "$(command -v keychain)" ] && [ -f $HOME/.ssh/id_rsa ]; then
