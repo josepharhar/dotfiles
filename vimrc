@@ -1,11 +1,37 @@
-set hlsearch
-syntax on
+" Load plugins
+silent! call pathogen#infect()
 
 " Line numbers
 nmap <C-l> :set invnumber<CR>
 
-" Bold Fonts
-set bg=dark
+syntax on
+set hlsearch              " highlight matches for searches
+set bg=dark               " for white on black terminals
+set hidden                " keep other buffers 'open' instead of closing
+set autoread              " load files from disk when using :checktime
+
+" open all files in arglist when they are loaded to prevent E173: n more files
+" to edit
+" TODO fix with this
+" http://stackoverflow.com/questions/9354847/concatenate-inputs-in-bash-script
+if argc() > 1
+  silent blast " load last buffer
+  silent bfirst " switch back to the first
+endif
+
+" wildmenu
+set wildchar=<Tab>
+set wildmenu
+"set wildmode=full " :help wildmode
+"set wildmode=longest:full
+set wildmode=longest:full,full
+
+" alt keybindings to switch between windows
+" keybindings were discovered by pressing ctrl+v then alt+j in insert mode
+nnoremap <silent> j :wincmd j<CR>
+nnoremap <silent> h :wincmd h<CR>
+nnoremap <silent> k :wincmd k<CR>
+nnoremap <silent> l :wincmd l<CR>
 
 " Standard vim options
 set autoindent            " always set autoindenting on
@@ -18,7 +44,6 @@ set foldlevel=0           " show contents of all folds
 set foldmethod=indent     " use indent unless overridden
 set guioptions-=m         " Remove menu from the gui
 set guioptions-=T         " Remove toolbar
-set hidden                " hide buffers instead of closing
 set history=50            " keep 50 lines of command line history
 set ignorecase            " Do case insensitive matching
 set incsearch             " Incremental search
@@ -40,7 +65,6 @@ set softtabstop=4         " Why are tabs so big?  This fixes it
 "set textwidth=0           " Don't wrap words by default
 "set textwidth=80          " This wraps a line with a break when you reach 80 chars
 set virtualedit=block     " let blocks be in virutal edit mode
-set wildmenu              " This is used with wildmode(full) to cycle options
 
 " Screen settings
 " When editing a file, make screen display the name of the file you are editing
