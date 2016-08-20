@@ -56,6 +56,8 @@ alias asdf="echo \"dotfiles loaded\""
 alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
 alias bb="mvn install"
+alias ..="cd .."
+
 hex2dec () {
   echo $((16#$1))
 }
