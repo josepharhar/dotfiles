@@ -2,7 +2,8 @@
 silent! call pathogen#infect()
 
 " Line numbers
-nmap <C-l> :set invnumber<CR>
+"nmap <C-l> :set invnumber<CR>
+"set invnumber
 
 syntax on
 set hlsearch              " highlight matches for searches
@@ -26,17 +27,29 @@ set wildmenu
 "set wildmode=longest:full
 set wildmode=longest:full,full
 
+"set errorformat=%*[^"]"%f"%*\D%l: %m,"%f"%*\D%l: %m,%-G%f:%l: (Each undeclared identifier is reported only once,%-G%f:%l: for each function it appears in.),%-GIn file included from %f:%l:%c:,%-GIn file included from %f:%l:%c\,,%-GIn file included from %f:%l:%c,%-GIn file included from %f:%l,%-G%*[ ]from %f:%l:%c,%-G%*[ ]from %f:%l:,%-G%*[ ]from %f:%l\,,%-G%*[ ]from %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,"%f"\, line %l%*\D%c%*[^ ] %m,%D%*\a[%*\d]: Entering directory %*[`']%f',%X%*\a[%*\d]: Leaving directory %*[`']%f',%D%*\a: Entering directory %*[`']%f',%X%*\a: Leaving directory %*[`']%f',%DMaking %*\a in %f,%f|%l| %m
+
+"clang errorformat?
+"errorformat=%f:%l:%c:\ %t%s:\ %m
+
 " alt keybindings to switch between windows
 " keybindings were discovered by pressing ctrl+v then alt+j in insert mode
-nnoremap <silent> j :wincmd j<CR>
-nnoremap <silent> h :wincmd h<CR>
-nnoremap <silent> k :wincmd k<CR>
-nnoremap <silent> l :wincmd l<CR>
+"nnoremap <silent> j :wincmd j<CR>
+"nnoremap <silent> h :wincmd h<CR>
+"nnoremap <silent> k :wincmd k<CR>
+"nnoremap <silent> l :wincmd l<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+
+" ycm
+nnoremap <C-i> :YcmCompleter GoTo<CR>
 
 " Standard vim options
 set autoindent            " always set autoindenting on
 set backspace=2           " allow backspacing over everything in insert mode
-set cindent               " c code indenting
+"set cindent               " c code indenting
 set diffopt=filler,iwhite " keep files synced and ignore whitespace
 set expandtab             " Get rid of tabs altogether and replace with spaces
 "set foldcolumn=2          " set a column incase we need it
@@ -58,10 +71,10 @@ set ttimeout              " timeout on key-codes
 set ttimeoutlen=100       " timeout on key-codes after 100ms
 set ruler                 " the ruler on the bottom is useful
 set scrolloff=1           " dont let the curser get too close to the edge
-set shiftwidth=4          " Set indention level to be the same as softtabstop
+"set shiftwidth=4          " Set indention level to be the same as softtabstop
 set showcmd               " Show (partial) command in status line.
 set showmatch             " Show matching brackets.
-set softtabstop=4         " Why are tabs so big?  This fixes it
+"set softtabstop=4         " Why are tabs so big?  This fixes it
 "set textwidth=0           " Don't wrap words by default
 "set textwidth=80          " This wraps a line with a break when you reach 80 chars
 set virtualedit=block     " let blocks be in virutal edit mode
@@ -82,9 +95,9 @@ endfunction
 autocmd BufEnter,BufFilePost * call SetTitle()
 
 " Hex editing settings
-nnoremap <C-H> :Hexmode<CR>
-inoremap <C-H> <Esc>:Hexmode<CR>
-vnoremap <C-H> :<C-U>Hexmode<CR>
+"nnoremap <C-H> :Hexmode<CR>
+"inoremap <C-H> <Esc>:Hexmode<CR>
+"vnoremap <C-H> :<C-U>Hexmode<CR>
 " ex command for toggling hex mode - define mapping if desired
 command -bar Hexmode call ToggleHex()
 " helper function to toggle hex mode
@@ -126,3 +139,7 @@ function ToggleHex()
   let &readonly=l:oldreadonly
   let &modifiable=l:oldmodifiable
 endfunction
+
+" Google
+set makeprg=ninc
+set shellcmdflag=-ic " interactive shell so ninc will get aliased

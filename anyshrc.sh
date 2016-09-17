@@ -22,6 +22,7 @@ alias greh="git reset --hard"
 alias grei="git rebase -i"
 alias gb="git branch"
 alias gbd="git branch -D"
+alias gba="git branch -a"
 alias gdf="git diff"
 alias gdfh="git diff HEAD^"
 alias gdfn="git diff --name-only"
@@ -42,6 +43,11 @@ kcadd () {
   eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
 }
 
+# chrome aliases
+#alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
+alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
+alias chrtest="ninja -j1024 -C out/Release cast_shell_browser_test && out/Release/cast_shell_browser_test --test-launcher-bot-mode --enable-local-file-accesses --ozone-platform=cast --no-sandbox --test-launcher-jobs=1 --test-launcher-summary-output=asdf.log"
+
 # other aliases
 alias c="clear"
 alias cl="c && l"
@@ -56,14 +62,13 @@ alias asdf="echo \"dotfiles loaded\""
 alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
 alias bb="mvn install"
-alias ..="cd .."
-
 hex2dec () {
   echo $((16#$1))
 }
 dec2hex() {
   printf "%x\n" $1
 }
+alias ..="cd .."
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then

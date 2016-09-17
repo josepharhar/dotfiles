@@ -1,6 +1,12 @@
 precmd_auto_title_screens ()
 {
+  #local TITLE="..."
+  #local TITLE=$TITLE${PWD:(-7)}
+
+  #local TITLE=${PWD:(-10)}
+
   local TITLE=${PWD:t}
+
   # 'screen' sets STY as well, so for users who override the TERM
   # environment variable, checking STY is nice
   if [[ $TERM == "screen" || -n $STY ]]; then
