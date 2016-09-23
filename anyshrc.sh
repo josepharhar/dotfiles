@@ -77,3 +77,7 @@ fi
 
 # Add sbin folders to path
 PATH=$PATH:/sbin:/usr/sbin
+# Add Chromium depot_tools to path
+if [ -d "$HOME/depot_tools" ]; then
+  PATH=$PATH:$HOME/depot_tools
+fi
