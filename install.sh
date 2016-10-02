@@ -1,5 +1,8 @@
 #/bin/sh
 
+# to install with cygwin:
+# lynx -source https://raw.githubusercontent.com/josepharhar/dotfiles/master/install.sh > install.sh && chmod +x install.sh && ./install.sh
+
 RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
