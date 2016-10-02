@@ -1,15 +1,15 @@
-" Load plugins
+" Load pathogen.vim plugins
 silent! call pathogen#infect()
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
-"set invnumber
+"set number
 
 syntax on
-set hlsearch              " highlight matches for searches
-set bg=dark               " for white on black terminals
-set hidden                " keep other buffers 'open' instead of closing
-set autoread              " load files from disk when using :checktime
+set hlsearch " highlight matches for searches
+set bg=dark  " for white on black terminals
+set hidden   " keep other buffers 'open' instead of closing
+set autoread " load files from disk when using :checktime
 
 " open all files in arglist when they are loaded to prevent E173: n more files
 " to edit
@@ -154,11 +154,11 @@ endfunction
 set makeprg=ninc
 set shellcmdflag=-ic " interactive shell so ninc will get aliased
 
-" Unmodded powerline character
-"let g:airline_left_sep = '▶'
-" Modded powerline character
-"let g:airline_left_sep = ''
+"let g:airline_left_sep = '▶' " Unmodded powerline character
+"let g:airline_left_sep = '' " Modded powerline character
 let g:airline_powerline_fonts = 1
 "if !exists('g:airline_symbols')
 "  let g:airline_symbols = {}
 "endif
+
+filetype plugin indent on " for eclim
