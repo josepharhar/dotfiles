@@ -59,7 +59,7 @@ alias sus="sudo /usr/sbin/pm-suspend"
 alias grep="grep --color=auto"
 alias grepa="grep -rni '.' -e"
 alias asdf="echo \"dotfiles loaded\""
-alias eclipse="SWT_GTK3=0 eclipse"
+#alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
 alias bb="mvn install"
 hex2dec () {
@@ -83,3 +83,6 @@ if [ -d "$HOME/depot_tools" ]; then
 fi
 
 alias java-format="java -jar /usr/local/bin/java-format.jar"
+alias gscale="gsettings set org.gnome.desktop.interface scaling-factor"
+
+alias clang-format="clang-format-3.8 -style=Chromium -i"
