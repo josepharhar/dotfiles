@@ -3,7 +3,7 @@ silent! call pathogen#infect()
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
-"set number
+set number
 
 syntax on
 set hlsearch " highlight matches for searches
@@ -54,9 +54,11 @@ function! SpacesPerTab(numSpaces)
 endfunction
 set expandtab                  " Insert spaces when pressing <Tab>
 call SpacesPerTab(2)           " Set spaces per tab to 2 by default
+" Keybindings to change # of spaces per tab
 :map T2 :call SpacesPerTab(2)<CR>
 :map T3 :call SpacesPerTab(3)<CR>
 :map T4 :call SpacesPerTab(4)<CR>
+:map T<Tab> :set noexpandtab<CR>
 
 
 " Standard vim options
@@ -162,3 +164,5 @@ let g:airline_powerline_fonts = 1
 "endif
 
 filetype plugin indent on " for eclim
+
+"let g:EclimCompletionMethod = 'omnifunc'

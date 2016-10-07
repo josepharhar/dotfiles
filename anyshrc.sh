@@ -81,3 +81,5 @@ PATH=$PATH:/sbin:/usr/sbin
 if [ -d "$HOME/depot_tools" ]; then
   PATH=$PATH:$HOME/depot_tools
 fi
+
+alias java-format="java -jar /usr/local/bin/java-format.jar"
