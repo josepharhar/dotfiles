@@ -1,0 +1,7 @@
+chrome fonts on windows settings:
+size: 16
+standard font: times new roman
+serif font: times new roman
+sans-serif font: arial
+fixed-width font: consolas
+encoding: Western (Windows-1252)
