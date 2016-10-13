@@ -1,3 +1,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired
+[submodule "vim/bundle/vim-bufferline"]
+	path = vim/bundle/vim-bufferline
+	url = git@github.com:bling/vim-bufferline
