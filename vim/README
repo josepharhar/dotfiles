@@ -1,0 +1,4 @@
+These vim plugins are git submodules.
+
+To use submodules, clone this repo with git clone --recursive
+or run git submodule init && git submodule update
