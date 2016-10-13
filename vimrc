@@ -154,7 +154,9 @@ endfunction
 
 " Google
 set makeprg=ninc
-set shellcmdflag=-ic " interactive shell so ninc will get aliased
+
+" this causes CSL server with older vim to open terminal after opening vim
+"set shellcmdflag=-ic " interactive shell so ninc will get aliased
 
 "let g:airline_left_sep = '▶' " Unmodded powerline character
 "let g:airline_left_sep = '' " Modded powerline character
