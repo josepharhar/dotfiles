@@ -69,6 +69,11 @@ dec2hex() {
   printf "%x\n" $1
 }
 alias ..="cd .."
+alias java-format="java -jar /usr/local/bin/java-format.jar"
+alias clang-format="clang-format-3.8 -style=Chromium -i"
+if [ `uname -o` = 'Cygwin' ]; then
+  alias ping="ping -t"
+fi
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then
@@ -81,8 +86,3 @@ PATH=$PATH:/sbin:/usr/sbin
 if [ -d "$HOME/depot_tools" ]; then
   PATH=$PATH:$HOME/depot_tools
 fi
-
-alias java-format="java -jar /usr/local/bin/java-format.jar"
-alias gscale="gsettings set org.gnome.desktop.interface scaling-factor"
-
-alias clang-format="clang-format-3.8 -style=Chromium -i"
