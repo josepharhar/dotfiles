@@ -86,3 +86,8 @@ PATH=$PATH:/sbin:/usr/sbin
 if [ -d "$HOME/depot_tools" ]; then
   PATH=$PATH:$HOME/depot_tools
 fi
+
+# 471 config
+export GLM_INCLUDE_DIR=$HOME/glm
+export GLFW_DIR=$HOME/glfw
+export GLEW_DIR=$HOME/glew-2.0.0
