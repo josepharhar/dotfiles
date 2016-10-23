@@ -71,6 +71,7 @@ dec2hex() {
 alias ..="cd .."
 alias java-format="java -jar /usr/local/bin/java-format.jar"
 alias clang-format="clang-format-3.8 -style=Chromium -i"
+alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
 if [ `uname -o` = 'Cygwin' ]; then
   alias ping="ping -t"
 fi
@@ -86,6 +87,14 @@ PATH=$PATH:/sbin:/usr/sbin
 if [ -d "$HOME/depot_tools" ]; then
   PATH=$PATH:$HOME/depot_tools
 fi
+
+# iptables notes
+# list rules:
+#  iptables -t nat -L --line-numbers
+# delete rule:
+#  iptables -t nat -D PREROUTING/OUTPUT rule#
+# map incoming port:
+#  iptables -t nat -A PREROUTING -p tcp --dport incomingport# -j REDIRECT --to-port destinationport#
 
 # 471 config
 export GLM_INCLUDE_DIR=$HOME/glm
