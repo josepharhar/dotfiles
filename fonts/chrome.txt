@@ -5,3 +5,11 @@ serif font: times new roman
 sans-serif font: arial
 fixed-width font: consolas
 encoding: Western (Windows-1252)
+
+chromeos:
+size: 16
+standard: Tinos
+serif: Tinos
+sans-serif: Arimo
+moospace: Cousine
+encoding: Western (Windows-1252)
