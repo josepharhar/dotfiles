@@ -1,5 +1,9 @@
-" Load pathogen.vim plugins
-silent! call pathogen#infect()
+" Loat plugins
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-unimpaired'
+Plug 'bling/vim-bufferline'
+Plug 'kien/ctrlp.vim'
+call plug#end()
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
@@ -168,3 +172,6 @@ let g:airline_powerline_fonts = 1
 filetype plugin indent on " for eclim
 
 "let g:EclimCompletionMethod = 'omnifunc'
+
+" CPE 471 config
+se tags+=$HOME/glm/tags
