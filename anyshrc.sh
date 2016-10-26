@@ -100,3 +100,5 @@ fi
 export GLM_INCLUDE_DIR=$HOME/glm
 export GLFW_DIR=$HOME/glfw
 export GLEW_DIR=$HOME/glew-2.0.0
+
+eval "$(lesspipe)"

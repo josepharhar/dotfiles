@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
 Plug 'kien/ctrlp.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Line numbers
