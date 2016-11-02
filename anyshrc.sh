@@ -48,6 +48,15 @@ kcadd () {
 alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
 alias chrtest="ninja -j1024 -C out/Release cast_shell_browser_test && out/Release/cast_shell_browser_test --test-launcher-bot-mode --enable-local-file-accesses --ozone-platform=cast --no-sandbox --test-launcher-jobs=1 --test-launcher-summary-output=asdf.log"
 
+# iptables aliases
+alias ipt-list="sudo iptables -t nat -L --line-numbers"
+alias ipt-delete="sudo iptables -t nat -D PREROUTING"
+ipt-map() {
+  # $1 is incoming port, $2 is local destination port
+  sudo iptables -t nat -A PREROUTING -p tcp --dport $1 -j REDIRECT --to-port $2
+}
+alias ipt-save="sudo sh -c 'iptables-save > /etc/iptables/rules.v4'"
+
 # other aliases
 alias c="clear"
 alias cl="c && l"
@@ -62,7 +71,7 @@ alias asdf="echo \"dotfiles loaded\""
 #alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
 alias bb="mvn spring-boot:run"
-hex2dec () {
+hex2dec() {
   echo $((16#$1))
 }
 dec2hex() {
@@ -88,17 +97,10 @@ if [ -d "$HOME/depot_tools" ]; then
   PATH=$PATH:$HOME/depot_tools
 fi
 
-# iptables notes
-# list rules:
-#  iptables -t nat -L --line-numbers
-# delete rule:
-#  iptables -t nat -D PREROUTING/OUTPUT rule#
-# map incoming port:
-#  iptables -t nat -A PREROUTING -p tcp --dport incomingport# -j REDIRECT --to-port destinationport#
-
 # 471 config
 export GLM_INCLUDE_DIR=$HOME/glm
 export GLFW_DIR=$HOME/glfw
 export GLEW_DIR=$HOME/glew-2.0.0
+export EIGEN3_INCLUDE_DIR=$HOME/eigen-3.2.6
 
 eval "$(lesspipe)"
