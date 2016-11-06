@@ -79,11 +79,14 @@ dec2hex() {
 }
 alias ..="cd .."
 alias java-format="java -jar /usr/local/bin/java-format.jar"
-alias clang-format="clang-format-3.8 -style=Chromium -i"
+alias clang-format-file="clang-format-3.8 -style=Chromium -i"
 alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
 if [ `uname -o` = 'Cygwin' ]; then
   alias ping="ping -t"
 fi
+mkcd() {
+  mkdir $1 && cd $1
+}
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then
