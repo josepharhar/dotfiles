@@ -106,4 +106,6 @@ export GLFW_DIR=$HOME/glfw
 export GLEW_DIR=$HOME/glew-2.0.0
 export EIGEN3_INCLUDE_DIR=$HOME/eigen-3.2.6
 
-eval "$(lesspipe)"
+if [ -x lesspipe ]; then
+  eval "$(lesspipe)"
+fi
