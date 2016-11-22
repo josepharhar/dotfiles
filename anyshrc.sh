@@ -13,7 +13,8 @@ alias sse="ssa arhar@Arhar-Arch-VM.local"
 # git aliases
 alias gits="git status"
 alias g="git"
-alias clgs="c && git lag ; gits"
+alias clag="clear && git lag"
+alias clgs="clear && git lag ; gits"
 alias amend="git add . && git commit --amend --no-edit"
 alias gc="git checkout"
 alias gcb="git checkout -b"
@@ -65,7 +66,7 @@ alias lef="less +F"
 alias mc="java -Xms512M -Xmx6G -jar"
 alias shut="sudo /sbin/shutdown -h now"
 alias sus="sudo /usr/sbin/pm-suspend"
-alias grep="grep --color=auto"
+alias grep="grep --color=auto -i" # -i ignores case
 alias grepa="grep -rni '.' -e"
 alias asdf="echo \"dotfiles loaded\""
 #alias eclipse="SWT_GTK3=0 eclipse"
@@ -84,9 +85,19 @@ alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++
 if [ `uname -o` = 'Cygwin' ]; then
   alias ping="ping -t"
 fi
+alias make="make -j4"
 mkcd() {
   mkdir $1 && cd $1
 }
+alias mkcdmake="mkdir build && cd build && cmake .. && make -j4"
+delete-submodule() {
+  rm -rf $1
+  git submodule deinit $1
+  git rm $1
+  git rm --cached $1
+  rm -rf .git/modules/$1
+}
+alias rmrf="rm -rf"
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then
