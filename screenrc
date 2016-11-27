@@ -5,3 +5,6 @@ hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %=%Y-%m-%d %C
 
 vbell off
 defscrollback 1000
+
+bind ^x
+bind x
