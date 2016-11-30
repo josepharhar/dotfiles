@@ -187,3 +187,6 @@ let g:ctrlp_working_path_mode = ''
 " Maven
 set makeprg=mvn\ compile
 set errorformat=[ERROR]\ %f:[%l\\,%v]\ %m
+
+" TODO :noh temporarily disables hlsearch until next search, make a keybinding pls
+set clipboard=unnamedplus
