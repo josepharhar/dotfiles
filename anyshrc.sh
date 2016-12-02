@@ -56,7 +56,7 @@ ipt-map() {
   # $1 is incoming port, $2 is local destination port
   sudo iptables -t nat -A PREROUTING -p tcp --dport $1 -j REDIRECT --to-port $2
 }
-alias ipt-save="sudo sh -c 'iptables-save > /etc/iptables/rules.v4'"
+alias ipt-save="sudo sh -c 'mkdir -p /etc/iptables && iptables-save > /etc/iptables/rules.v4'"
 
 # other aliases
 alias c="clear"
