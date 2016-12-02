@@ -98,6 +98,9 @@ delete-submodule() {
   rm -rf .git/modules/$1
 }
 alias rmrf="rm -rf"
+ioerr() {
+  $1 2>&1 | $2
+}
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then
