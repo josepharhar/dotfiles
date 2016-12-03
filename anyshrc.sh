@@ -57,7 +57,7 @@ ipt-map() {
   sudo iptables -t nat -A PREROUTING -p tcp --dport $1 -j REDIRECT --to-port $2
 }
 # this requires ubuntu 16.04 package "iptables-persistent" to be installed
-alias ipt-save="sudo sh 'iptables-save > /etc/iptables/rules.v4'"
+alias ipt-save="sudo sh -c 'iptables-save > /etc/iptables/rules.v4'"
 
 # other aliases
 alias c="clear"
