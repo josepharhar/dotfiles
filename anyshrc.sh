@@ -56,7 +56,8 @@ ipt-map() {
   # $1 is incoming port, $2 is local destination port
   sudo iptables -t nat -A PREROUTING -p tcp --dport $1 -j REDIRECT --to-port $2
 }
-alias ipt-save="sudo sh -c 'mkdir -p /etc/iptables && iptables-save > /etc/iptables/rules.v4'"
+#alias ipt-save="sudo sh -c 'mkdir -p /etc/iptables && iptables-save > /etc/iptables/rules.v4'"
+alias ipt-save="sudo sh -c 'iptables-save > /etc/iptables.rules'"
 
 # other aliases
 alias c="clear"
@@ -101,6 +102,7 @@ alias rmrf="rm -rf"
 ioerr() {
   $1 2>&1 | $2
 }
+alias findf="find . ! -readable -prune -o -type f -print"
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then
