@@ -160,7 +160,7 @@ function ToggleHex()
 endfunction
 
 " Google
-set makeprg=ninc
+"set makeprg=ninc
 
 " this causes CSL server with older vim to open terminal after opening vim
 "set shellcmdflag=-ic " interactive shell so ninc will get aliased
@@ -180,3 +180,7 @@ filetype plugin indent on " for eclim
 se tags+=$HOME/glm/tags
 
 let g:ctrlp_working_path_mode = ''
+
+" Maven
+set makeprg=mvn\ compile
+set errorformat=[ERROR]\ %f:[%l\\,%v]\ %m
