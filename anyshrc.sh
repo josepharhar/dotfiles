@@ -72,7 +72,7 @@ alias grepa="grep -rni '.' -e"
 alias asdf="echo \"dotfiles loaded\""
 #alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
-alias bb="mvn spring-boot:run"
+alias bb="mvn -T 4 spring-boot:run"
 hex2dec() {
   echo $((16#$1))
 }

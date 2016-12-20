@@ -5,6 +5,8 @@ Plug 'bling/vim-bufferline'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'danro/rename.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Line numbers
@@ -49,6 +51,7 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
+nnoremap <silent> <C-m> :wincmd q<CR>
 
 " ycm
 nnoremap <C-i> :YcmCompleter GoTo<CR>
