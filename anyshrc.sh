@@ -103,6 +103,15 @@ ioerr() {
   $1 2>&1 | $2
 }
 alias findf="find . ! -readable -prune -o -type f -print"
+zgs() {
+  if [ "$#" -eq 2 ]; then
+    find . -type f -print | grep -P "$2" | xargs -I% sh -c 'echo % >&2; zgrep -HP "'"$1"'" %' | awk -F '.gz:' '{ print $2,": ",$1}' | sort > ~/thing
+  elif [ "$#" -eq 1 ]; then
+    find . -type f -print0 | xargs -0 -I% sh -c 'echo % >&2; zgrep -HP "'"$1"'" %' | awk -F '.gz:' '{ print $2,": ",$1}' | sort > ~/thing
+  else
+    echo "Usage: zgs search_regex [file_name_pattern]"
+  fi
+}
 
 # Disable X Beep
 if [ -n "$DISPLAY" ]; then
