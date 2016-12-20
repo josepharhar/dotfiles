@@ -180,10 +180,18 @@ filetype plugin indent on " for eclim
 "let g:EclimCompletionMethod = 'omnifunc'
 
 " CPE 471 config
-se tags+=$HOME/glm/tags
+"se tags+=$HOME/glm/tags
 
 let g:ctrlp_working_path_mode = ''
 
 " Maven
 set makeprg=mvn\ compile
 set errorformat=[ERROR]\ %f:[%l\\,%v]\ %m
+
+" tags
+nmap <C-\> :vs <CR>:exec("tag ".expand("<cword>"))<CR>
+set tags=./tags;/
+" whenever a java file is opened, add java src tags
+"  how would i remove this when going back to a non-java file?
+"  and how would i prevent this from re-adding?
+autocmd FileType java set tags+=$HOME/dotfiles/bin/jtags

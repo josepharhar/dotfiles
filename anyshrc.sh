@@ -82,7 +82,17 @@ dec2hex() {
 alias ..="cd .."
 alias java-format="java -jar /usr/local/bin/java-format.jar"
 alias clang-format-file="clang-format-3.8 -style=Chromium -i"
-alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
+alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -R ."
+#alias jtags="ctags --fields=+iaS --extra=+q --language-force=java -R ."
+alias jtags="ctags --fields=+iaS --extra=+q -R ."
+jtags-src() {
+  mkdir -p $HOME/dotfiles/bin
+  if [ ! -d $HOME/dotfiles/bin/java-src ]; then
+    # sudo apt-get install openjdk-8-source to get src.zip
+    unzip /usr/lib/jvm/openjdk-8/src.zip -d $HOME/dotfiles/bin/java-src
+  fi
+  ctags --language-force=java --fields=+iaS --extra=+q -f $HOME/dotfiles/bin/jtags -R $HOME/dotfiles/bin/java-src
+}
 if [ `uname -o` = 'Cygwin' ]; then
   alias ping="ping -t"
 fi
