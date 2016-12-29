@@ -10,7 +10,7 @@
 [push]
 	default = current
 [alias]
-  clean = clean -fd
+	clean = clean -fd
 	track = branch -u
 	nuke = clean -fdx
 	dag = log --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 20

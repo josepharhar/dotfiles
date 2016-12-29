@@ -80,7 +80,12 @@ dec2hex() {
   printf "%x\n" $1
 }
 alias ..="cd .."
-alias java-format="java -jar /usr/local/bin/java-format.jar"
+java-format() {
+  if [ ! -f $HOME/dotfiles/bin/google-java-format.jar ]; then
+    wget "https://github.com/google/google-java-format/releases/download/google-java-format-1.1/google-java-format-1.1-all-deps.jar" -O $HOME/dotfiles/bin/google-java-format.jar
+  fi
+  java -jar $HOME/dotfiles/bin/google-java-format.jar --replace "$@"
+}
 alias clang-format-file="clang-format-3.8 -style=Chromium -i"
 alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
 if [ `uname -o` = 'Cygwin' ]; then
@@ -134,3 +139,6 @@ export EIGEN3_INCLUDE_DIR=$HOME/eigen-3.2.6
 if [ -x lesspipe ]; then
   eval "$(lesspipe)"
 fi
+
+# Create bin directory for storing files
+mkdir -p $HOME/dotfiles/bin
