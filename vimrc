@@ -1,3 +1,7 @@
+"highlight LineNr ctermfg=grey ctermbg=black
+highlight LineNr ctermfg=grey ctermbg=black
+" http://stackoverflow.com/questions/237289/vim-configure-line-number-coloring
+
 " Loat plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
