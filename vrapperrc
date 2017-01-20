@@ -1,0 +1,25 @@
+set number
+set ic
+set hlsearch
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+nnoremap <silent> <C-m> :wincmd q<CR>
+
+" Spaces and Tabs
+function! SpacesPerTab(numSpaces)
+  let &tabstop=a:numSpaces     " Number of spaces <Tab> characters appear as
+  let &softtabstop=a:numSpaces " Number of spaces inserted when pressing <Tab>
+  let &shiftwidth=a:numSpaces  " Number of spaces per indent for >>, cindent
+endfunction
+set expandtab                  " Insert spaces when pressing <Tab>
+call SpacesPerTab(2)           " Set spaces per tab to 2 by default
+" Keybindings to change # of spaces per tab
+:map T2 :call SpacesPerTab(2)<CR>
+:map T3 :call SpacesPerTab(3)<CR>
+:map T4 :call SpacesPerTab(4)<CR>
+:map T<Tab> :set noexpandtab<CR>
+
+set autoindent
+set clipboard=unnamedplus

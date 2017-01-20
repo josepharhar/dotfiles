@@ -1,4 +1,4 @@
-" Loat plugins
+" Load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
