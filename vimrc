@@ -7,6 +7,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
+"Plug 'google/vim-maktaba'
+"Plug 'google/vim-codefmt'
+"Plug 'google/vim-glaive'
 call plug#end()
 
 " Line numbers
