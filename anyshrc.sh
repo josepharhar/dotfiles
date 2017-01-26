@@ -117,9 +117,10 @@ zgs() {
     echo "Usage: zgs search_regex [file_name_pattern]"
   fi
 }
+alias cmakevs="cmake -G \"Visual Studio 14 2015 Win64\""
 
 # Disable X Beep
-if [ -n "$DISPLAY" ]; then
+if [ -x "xset" ] && [ -n "$DISPLAY" ]; then
   xset b off
 fi
 
