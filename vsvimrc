@@ -1,0 +1,9 @@
+set hlsearch
+set clipboard=unnamedplus
+set incsearch
+set ignorecase
+set virtualedit=block
+set autoindent
+set number
+set shiftwidth=2
+set tabstop=2
