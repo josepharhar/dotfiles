@@ -28,6 +28,16 @@ alias gdf="git diff"
 alias gdfh="git diff HEAD^"
 alias gdfn="git diff --name-only"
 alias gdfnh="git diff --name-only HEAD^"
+delete-submodule() {
+  rm -rf $1
+  git submodule deinit $1
+  git rm $1
+  git rm --cached $1
+  rm -rf .git/modules/$1
+}
+gdff() {
+  git diff ${1}^ $1
+}
 
 # open all files from a list, works with aliases - "vimo gdfnh"
 vimo () {
@@ -96,13 +106,6 @@ mkcd() {
   mkdir $1 && cd $1
 }
 alias mkcdmake="mkdir build && cd build && cmake .. && make -j4"
-delete-submodule() {
-  rm -rf $1
-  git submodule deinit $1
-  git rm $1
-  git rm --cached $1
-  rm -rf .git/modules/$1
-}
 alias rmrf="rm -rf"
 ioerr() {
   $1 2>&1 | $2
