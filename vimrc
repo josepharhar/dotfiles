@@ -12,8 +12,11 @@ Plug 'tpope/vim-sleuth'
 "Plug 'google/vim-codefmt'
 "Plug 'google/vim-glaive'
 Plug 'kana/vim-fakeclip'
-"Plug 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
+
+" rhysd/vim-clang-format
+let g:clang_format#code_style = 'chromium'
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
