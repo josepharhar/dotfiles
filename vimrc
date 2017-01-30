@@ -11,6 +11,8 @@ Plug 'tpope/vim-sleuth'
 "Plug 'google/vim-maktaba'
 "Plug 'google/vim-codefmt'
 "Plug 'google/vim-glaive'
+Plug 'kana/vim-fakeclip'
+"Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 " Line numbers
@@ -193,4 +195,5 @@ set makeprg=mvn\ compile
 set errorformat=[ERROR]\ %f:[%l\\,%v]\ %m
 
 " TODO :noh temporarily disables hlsearch until next search, make a keybinding pls
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+set clipboard=unnamed

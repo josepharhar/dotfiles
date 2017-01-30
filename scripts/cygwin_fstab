@@ -1,0 +1,11 @@
+# /etc/fstab
+#
+#    This file is read once by the first process in a Cygwin process tree.
+#    To pick up changes, restart all Cygwin processes.  For a description
+#    see https://cygwin.com/cygwin-ug-net/using.html#mount-table
+
+# This is default anyway:
+none /cygdrive cygdrive binary,posix=0,user 0 0
+C: /c ntfs binary,user,noacl 0 0
+D: /d ntfs binary,user,noacl 0 0
+E: /e ntfs binary,user,noacl 0 0
