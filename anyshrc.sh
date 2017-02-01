@@ -73,6 +73,7 @@ alias ipt-save="sudo sh -c 'iptables-save > /etc/iptables/rules.v4'"
 # other aliases
 alias c="clear"
 alias cl="c && l"
+alias ..="cd .."
 alias less="less -R"
 alias lef="less +F"
 alias mc="java -Xms512M -Xmx6G -jar"
@@ -84,34 +85,33 @@ alias asdf="echo \"dotfiles loaded\""
 #alias eclipse="SWT_GTK3=0 eclipse"
 alias db="mysql jarhar"
 alias bb="mvn -T 4 spring-boot:run"
+alias clang-format-file="clang-format-3.8 -style=Chromium -i"
+alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
+alias make="make -j4"
+alias mkcdmake="mkdir build && cd build && cmake .. && make -j4"
+alias rmrf="rm -rf"
+alias findf="find . ! -readable -prune -o -type f -print"
+alias cmakevs="cmake -G \"Visual Studio 14 2015 Win64\""
+
+# functions
 hex2dec() {
   echo $((16#$1))
 }
 dec2hex() {
   printf "%x\n" $1
 }
-alias ..="cd .."
 java-format() {
   if [ ! -f $HOME/dotfiles/bin/google-java-format.jar ]; then
     wget "https://github.com/google/google-java-format/releases/download/google-java-format-1.1/google-java-format-1.1-all-deps.jar" -O $HOME/dotfiles/bin/google-java-format.jar
   fi
   java -jar $HOME/dotfiles/bin/google-java-format.jar --replace "$@"
 }
-alias clang-format-file="clang-format-3.8 -style=Chromium -i"
-alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
-if [ `uname -o` = 'Cygwin' ]; then
-  alias ping="ping -t"
-fi
-alias make="make -j4"
 mkcd() {
   mkdir $1 && cd $1
 }
-alias mkcdmake="mkdir build && cd build && cmake .. && make -j4"
-alias rmrf="rm -rf"
 ioerr() {
   $1 2>&1 | $2
 }
-alias findf="find . ! -readable -prune -o -type f -print"
 zgs() {
   if [ "$#" -eq 2 ]; then
     find . -type f -print | grep -P "$2" | xargs -I% sh -c 'echo % >&2; zgrep -HP "'"$1"'" %' | awk -F '.gz:' '{ print $2,": ",$1}' | sort > ~/thing
@@ -121,7 +121,13 @@ zgs() {
     echo "Usage: zgs search_regex [file_name_pattern]"
   fi
 }
-alias cmakevs="cmake -G \"Visual Studio 14 2015 Win64\""
+
+# Windows
+if [ `uname -o` = 'Cygwin' ]; then
+  alias ping="ping -t"
+  PATH="$PATH:/c/Program Files (x86)/MSBuild/14.0/Bin"
+  alias msbuild="MSBuild.exe"
+fi
 
 # Disable X Beep
 if [ -x "xset" ] && [ -n "$DISPLAY" ]; then
