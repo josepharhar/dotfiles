@@ -38,6 +38,7 @@ delete-submodule() {
 gdff() {
   git diff ${1}^ $1
 }
+alias gfp="git fetch -p"
 
 # open all files from a list, works with aliases - "vimo gdfnh"
 vimo () {
