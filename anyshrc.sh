@@ -107,7 +107,8 @@ alias rmrf="rm -rf"
 ioerr() {
   $1 2>&1 | $2
 }
-alias findf="find . ! -readable -prune -o -type f -print"
+#alias findf="find . ! -readable -prune -o -type f -print"
+alias findf="find . -type f ! -path \"./.git/*\""
 zgs() {
   if [ "$#" -eq 2 ]; then
     find . -type f -print | grep -P "$2" | xargs -I% sh -c 'echo % >&2; zgrep -HP "'"$1"'" %' | awk -F '.gz:' '{ print $2,": ",$1}' | sort > ~/thing

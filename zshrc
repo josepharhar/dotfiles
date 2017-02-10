@@ -34,6 +34,8 @@ HISTSIZE=16000                 # spots for duplicates/uniques
 SAVEHIST=15000                 # unique events guarenteed
 HISTFILE=$HOME/.zsh_history
 setopt histignoredups          # ignore duplicates of the previous event
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # non-zsh configuration
 source $HOME/dotfiles/anyshrc.sh
