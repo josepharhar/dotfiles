@@ -13,6 +13,7 @@ Plug 'tpope/vim-sleuth'
 "Plug 'google/vim-glaive'
 Plug 'kana/vim-fakeclip'
 Plug 'rhysd/vim-clang-format'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 " rhysd/vim-clang-format
