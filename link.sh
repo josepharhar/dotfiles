@@ -18,5 +18,6 @@ link() {
 link ~/dotfiles/vim ~/.vim
 link ~/dotfiles/vimrc ~/.vimrc
 link ~/dotfiles/screenrc ~/.screenrc
+link ~/dotfiles/tmux.conf ~/.tmux.conf
 link ~/dotfiles/zshrc ~/.zshrc
 link ~/dotfiles/gitconfig ~/.gitconfig

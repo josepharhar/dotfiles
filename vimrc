@@ -14,6 +14,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'kana/vim-fakeclip'
 Plug 'rhysd/vim-clang-format'
 Plug 'mileszs/ack.vim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " rhysd/vim-clang-format
