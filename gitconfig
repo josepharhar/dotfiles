@@ -10,9 +10,10 @@
 [push]
 	default = current
 [alias]
-	clean = clean -fd
+	#clean = clean -fd
 	track = branch -u
 	nuke = clean -fdx
+	rekt = clean -fdx
 	dag = log --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 20
 	daga = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	dag-old = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order -n 20
