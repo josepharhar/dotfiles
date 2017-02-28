@@ -58,11 +58,16 @@ set wildignore+=*.class,*.swp,*/build/*,*/target/*,*.o,*/node_modules/*,*/deps/*
 "nnoremap <silent> h :wincmd h<CR>
 "nnoremap <silent> k :wincmd k<CR>
 "nnoremap <silent> l :wincmd l<CR>
+
 nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 nnoremap <silent> <C-m> :wincmd q<CR>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 " ycm
 nnoremap <C-i> :YcmCompleter GoTo<CR>
@@ -132,46 +137,46 @@ autocmd BufEnter,BufFilePost * call SetTitle()
 "inoremap <C-H> <Esc>:Hexmode<CR>
 "vnoremap <C-H> :<C-U>Hexmode<CR>
 " ex command for toggling hex mode - define mapping if desired
-command -bar Hexmode call ToggleHex()
-" helper function to toggle hex mode
-function ToggleHex()
-  " hex mode should be considered a read-only operation
-  " save values for modified and read-only for restoration later,
-  " and clear the read-only flag for now
-  let l:modified=&mod
-  let l:oldreadonly=&readonly
-  let &readonly=0
-  let l:oldmodifiable=&modifiable
-  let &modifiable=1
-  if !exists("b:editHex") || !b:editHex
-    " save old options
-    let b:oldft=&ft
-    let b:oldbin=&bin
-    " set new options
-    setlocal binary " make sure it overrides any textwidth, etc.
-    silent :e " this will reload the file without trickeries 
-              "(DOS line endings will be shown entirely )
-    let &ft="xxd"
-    " set status
-    let b:editHex=1
-    " switch to hex editor
-    %!xxd
-  else
-    " restore old options
-    let &ft=b:oldft
-    if !b:oldbin
-      setlocal nobinary
-    endif
-    " set status
-    let b:editHex=0
-    " return to normal editing
-    %!xxd -r
-  endif
-  " restore values for modified and read only state
-  let &mod=l:modified
-  let &readonly=l:oldreadonly
-  let &modifiable=l:oldmodifiable
-endfunction
+"\scommand -bar Hexmode call ToggleHex()
+"\s" helper function to toggle hex mode
+"\sfunction ToggleHex()
+"\s  " hex mode should be considered a read-only operation
+"\s  " save values for modified and read-only for restoration later,
+"\s  " and clear the read-only flag for now
+"\s  let l:modified=&mod
+"\s  let l:oldreadonly=&readonly
+"\s  let &readonly=0
+"\s  let l:oldmodifiable=&modifiable
+"\s  let &modifiable=1
+"\s  if !exists("b:editHex") || !b:editHex
+"\s    " save old options
+"\s    let b:oldft=&ft
+"\s    let b:oldbin=&bin
+"\s    " set new options
+"\s    setlocal binary " make sure it overrides any textwidth, etc.
+"\s    silent :e " this will reload the file without trickeries 
+"\s              "(DOS line endings will be shown entirely )
+"\s    let &ft="xxd"
+"\s    " set status
+"\s    let b:editHex=1
+"\s    " switch to hex editor
+"\s    %!xxd
+"\s  else
+"\s    " restore old options
+"\s    let &ft=b:oldft
+"\s    if !b:oldbin
+"\s      setlocal nobinary
+"\s    endif
+"\s    " set status
+"\s    let b:editHex=0
+"\s    " return to normal editing
+"\s    %!xxd -r
+"\s  endif
+"\s  " restore values for modified and read only state
+"\s  let &mod=l:modified
+"\s  let &readonly=l:oldreadonly
+"\s  let &modifiable=l:oldmodifiable
+"\sendfunction
 
 " Google
 "set makeprg=ninc
