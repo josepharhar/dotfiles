@@ -95,6 +95,7 @@ alias rmrf="rm -rf"
 alias findf="find . ! -readable -prune -o -type f -print"
 alias cmakevs="cmake -G \"Visual Studio 14 2015 Win64\""
 alias cmakevsd="cmakevs -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+alias cmakevsr="cmakevs -DCMAKE_BUILD_TYPE=Release"
 
 # functions
 hex2dec() {
