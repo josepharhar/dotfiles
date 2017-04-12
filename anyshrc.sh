@@ -158,3 +158,7 @@ fi
 
 # Create bin directory for storing files
 mkdir -p $HOME/dotfiles/bin
+
+if [ -f shrc.sh ]; then
+  source shrc.sh
+fi
