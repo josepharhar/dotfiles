@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
 Plug 'kien/ctrlp.vim'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -26,9 +26,15 @@ set number
 
 syntax on
 set hlsearch " highlight matches for searches
-set bg=dark  " for white on black terminals
 set hidden   " keep other buffers 'open' instead of closing
 set autoread " load files from disk when using :checktime
+
+" Colors
+set bg=dark " for white on black terminals
+"set t_Co=256
+"colo koehler " /usr/share/vim/vim74/colors/koehler.vim
+"hi Search cterm=bold ctermbg=darkblue ctermfg=white
+hi Search ctermbg=darkblue ctermfg=white
 
 " open all files in arglist when they are loaded to prevent E173: n more files
 " to edit
