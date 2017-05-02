@@ -6,9 +6,9 @@ alias lal="ls -Al"
 alias l="ll"
 
 # ssh aliases
-alias ssa="ssh -A"
+alias ssa="ssh -o StrictHostKeyChecking=no -A"
 alias ssx="DISPLAY=:0.0 ssh -CY"
-alias sse="ssa arhar@Arhar-Arch-VM.local"
+alias sse="ssa jarhar@10.0.0.130"
 
 # git aliases
 alias gits="git status"
