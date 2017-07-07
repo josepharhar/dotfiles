@@ -98,6 +98,7 @@ alias cmakevsd="cmakevs -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 alias cmakevsr="cmakevs -DCMAKE_BUILD_TYPE=Release"
 alias cmakevsdd="cmakevs -DCMAKE_BUILD_TYPE=Debug"
 alias m="make"
+alias duu="du -sh *"
 
 # functions
 hex2dec() {
