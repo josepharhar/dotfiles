@@ -165,3 +165,8 @@ mkdir -p $HOME/dotfiles/bin
 if [ -f shrc.sh ]; then
   source shrc.sh
 fi
+
+# Add pip local installs to path
+if [ -d "$HOME/.local/bin" ]; then
+  PATH=$PATH:$HOME/.local/bin
+fi
