@@ -71,6 +71,7 @@ ipt-map() {
 }
 # this requires ubuntu 16.04 package "iptables-persistent" to be installed
 alias ipt-save="sudo sh -c 'iptables-save > /etc/iptables/rules.v4'"
+alias ipt-nuke="sudo iptables -X && sudo iptables -t nat -F && sudo iptables -t nat -X && sudo iptables -t mangle -F && sudo iptables -t mangle -X && sudo iptables -P INPUT ACCEPT && sudo iptables -P FORWARD ACCEPT && sudo iptables -P OUTPUT ACCEPT"
 
 # other aliases
 alias c="clear"
