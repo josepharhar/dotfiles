@@ -8,9 +8,9 @@ Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-sleuth'
-"Plug 'google/vim-maktaba'
-"Plug 'google/vim-codefmt'
-"Plug 'google/vim-glaive'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-glaive'
+Plug 'google/vim-codefmt'
 Plug 'kana/vim-fakeclip'
 Plug 'rhysd/vim-clang-format'
 "Plug 'Chiel92/vim-autoformat'
@@ -18,10 +18,15 @@ Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
+call glaive#Install()
+"Glaive codefmt plugin[mappings]
+Glaive codefmt clang_format_executable="clang-format-3.8"
+Glaive codefmt clang_format_style="chromium"
+
 " rhysd/vim-clang-format
-let g:clang_format#code_style = 'chromium'
+"let g:clang_format#code_style = 'chromium'
 " Chiel92/vim-autoformat
-let g:formatdef_cpp_style = '"clang-format -style=Chromium"'
+"let g:formatdef_cpp_style = '"clang-format -style=Chromium"'
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>

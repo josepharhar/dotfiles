@@ -177,3 +177,7 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   PATH=$PATH:$HOME/.local/bin
 fi
+
+if [ -x "$(command -v clang-format-3.8)" ]; then
+  alias clang-format="clang-format-3.8"
+fi
