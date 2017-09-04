@@ -103,6 +103,10 @@ alias m="make"
 alias duu="du -sh *"
 alias tailf="tail +1f" https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
 
+# https://stackoverflow.com/a/17168847
+# usage: hexsearch "\x20\x3e\xaa" os.img
+alias hexsearch="grep -obUaP"
+
 # functions
 hex2dec() {
   echo $((16#$1))
