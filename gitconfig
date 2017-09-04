@@ -17,8 +17,8 @@
 	dag = log --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 20
 	daga = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	dag-old = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order -n 20
-	lag = log --all --graph --pretty=format:'%Cred%h%Creset %Cgreen%ci%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso-local -n 20
-	laga = log --all --graph --pretty=format:'%Cred%h%Creset %Cgreen%ci%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso-local
+	lag = log --all --graph --pretty=format:'%Cred%h%Creset %Cgreen%cd%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%F' -n 20
+	laga = log --all --graph --pretty=format:'%Cred%h%Creset %Cgreen%cd%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=format-local:'%F %I:%M %p'
 	jono = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	gud = help
 	jag = log --all --graph --pretty=format:'%Cred%h%Creset%C(auto)%d%Creset %s %Cgreen%cr %C(bold blue)%an%Creset' --abbrev-commit --date-order
