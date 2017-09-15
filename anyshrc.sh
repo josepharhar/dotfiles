@@ -101,7 +101,8 @@ alias cmakevsr="cmakevs -DCMAKE_BUILD_TYPE=Release"
 alias cmakevsdd="cmakevs -DCMAKE_BUILD_TYPE=Debug"
 alias m="make"
 alias duu="du -sh *"
-alias tailf="tail +1f" https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
+# https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
+alias tailf="tail +1f" 
 
 # https://stackoverflow.com/a/17168847
 # usage: hexsearch "\x20\x3e\xaa" os.img
