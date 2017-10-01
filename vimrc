@@ -16,6 +16,7 @@ Plug 'rhysd/vim-clang-format'
 "Plug 'Chiel92/vim-autoformat'
 Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'wlangstroth/vim-racket'
 call plug#end()
 
 call glaive#Install()
