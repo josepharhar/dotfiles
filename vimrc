@@ -127,6 +127,8 @@ set showmatch             " Show matching brackets.
 "set textwidth=80          " This wraps a line with a break when you reach 80 chars
 set virtualedit=block     " let blocks be in virutal edit mode
 
+au! FileType racket setl nocindent
+
 " Screen settings
 " When editing a file, make screen display the name of the file you are editing
 function! SetTitle()
