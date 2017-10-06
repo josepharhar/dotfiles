@@ -8,3 +8,8 @@ defscrollback 1000
 
 bind ^x
 bind x
+
+bind ^h focus left
+bind ^j focus down
+bind ^k focus up
+bind ^l focus right

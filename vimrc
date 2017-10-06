@@ -29,6 +29,8 @@ Glaive codefmt clang_format_style="chromium"
 " Chiel92/vim-autoformat
 "let g:formatdef_cpp_style = '"clang-format -style=Chromium"'
 
+let g:ctrlp_follow_symlinks = 1
+
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
 set number
