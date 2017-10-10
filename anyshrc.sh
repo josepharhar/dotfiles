@@ -50,7 +50,7 @@ vimo () {
 
 # keychain aliases
 kcstr () {
-  if [ -x "$(command -v keychain)" ] && [ -f $HOME/.ssh/id_rsa ]; then
+  if [ -x "$(command -v keychain)" ] && [ -f $HOME/.ssh/id_rsa ] && [ -z "$SSH_AUTH_SOCK" ]; then
     eval $(keychain --eval --quiet)
   fi
 }
