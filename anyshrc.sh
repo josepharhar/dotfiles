@@ -8,7 +8,7 @@ alias l="ll"
 # ssh aliases
 alias ssa="ssh -o StrictHostKeyChecking=no -A"
 alias ssx="DISPLAY=:0.0 ssh -CY"
-alias sse="ssa jarhar@10.0.0.130"
+alias sse="ssa jarhar@192.168.248.130"
 
 # git aliases
 alias gits="git status"
