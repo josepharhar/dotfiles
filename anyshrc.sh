@@ -103,6 +103,7 @@ alias m="make"
 alias duu="du -sh *"
 # https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
 alias tailf="tail +1f" 
+alias upd="sudo apt update && sudo apt upgrade && sudo apt autoremove"
 
 # https://stackoverflow.com/a/17168847
 # usage: hexsearch "\x20\x3e\xaa" os.img
