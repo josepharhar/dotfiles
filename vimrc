@@ -17,7 +17,11 @@ Plug 'rhysd/vim-clang-format'
 Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wlangstroth/vim-racket'
+Plug 'valloric/YouCompleteMe'
 call plug#end()
+
+" ycm
+set encoding=utf-8
 
 call glaive#Install()
 "Glaive codefmt plugin[mappings]
