@@ -36,6 +36,7 @@ HISTFILE=$HOME/.zsh_history
 setopt histignoredups          # ignore duplicates of the previous event
 
 # non-zsh configuration
+export SHDOTFILE=".zshrc"
 source $HOME/dotfiles/anyshrc.sh
 
 # Keychain

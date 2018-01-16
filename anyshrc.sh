@@ -182,3 +182,5 @@ fi
 if [ -x "$(command -v clang-format-3.8)" ]; then
   alias clang-format="clang-format-3.8"
 fi
+
+alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
