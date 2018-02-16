@@ -18,6 +18,7 @@ Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wlangstroth/vim-racket'
 Plug 'valloric/YouCompleteMe'
+Plug 'tomasr/molokai'
 call plug#end()
 
 call glaive#Install()
