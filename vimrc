@@ -17,7 +17,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wlangstroth/vim-racket'
-Plug 'valloric/YouCompleteMe'
+"Plug 'valloric/YouCompleteMe'
 call plug#end()
 
 call glaive#Install()
