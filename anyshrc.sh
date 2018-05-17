@@ -30,6 +30,7 @@ alias gdfn="git diff --name-only"
 alias gdfnh="git diff --name-only HEAD^"
 alias gcm="git commit -m"
 alias gpf="git push -f origin"
+alias gpd="git push origin --delete"
 delete-submodule() {
   rm -rf $1
   git submodule deinit $1
