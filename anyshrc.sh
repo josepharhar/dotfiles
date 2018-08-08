@@ -9,6 +9,7 @@ alias l="ll"
 alias ssa="ssh -o StrictHostKeyChecking=no -A"
 alias ssx="DISPLAY=:0.0 ssh -CY"
 alias sse="ssa jarhar@192.168.248.130"
+alias ssr="ssa josep@192.168.0.140"
 
 # git aliases
 alias gits="git status"
@@ -185,3 +186,5 @@ if [ -x "$(command -v clang-format-3.8)" ]; then
 fi
 
 alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
+
+alias oldest="find -type f -printf '%T+ %p\n' | sort | head -n 30"
