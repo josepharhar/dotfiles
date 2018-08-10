@@ -103,9 +103,10 @@ alias cmakevsr="cmakevs -DCMAKE_BUILD_TYPE=Release"
 alias cmakevsdd="cmakevs -DCMAKE_BUILD_TYPE=Debug"
 alias m="make"
 alias duu="du -sh *"
-# https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
-alias tailf="tail +1f" 
+alias tailf="tail +1f" # https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
 alias upd="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias oldest="find -type f -printf '%T+ %p\n' | sort | head -n 30"
+alias ssync="rsync -a --progress --delete -v -e \"ssh -T -o Compression=no\"" # https://gist.github.com/KartikTalwar/4393116
 
 # https://stackoverflow.com/a/17168847
 # usage: hexsearch "\x20\x3e\xaa" os.img
@@ -186,5 +187,3 @@ if [ -x "$(command -v clang-format-3.8)" ]; then
 fi
 
 alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
-
-alias oldest="find -type f -printf '%T+ %p\n' | sort | head -n 30"
