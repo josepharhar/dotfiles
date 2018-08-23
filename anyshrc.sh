@@ -140,6 +140,14 @@ zgs() {
     echo "Usage: zgs search_regex [file_name_pattern]"
   fi
 }
+mkmv() {
+  if [ "$#" -eq 2 ]; then
+    mkdir "$2"
+    mv "$1" "$2"
+  else
+    echo "Usage: mkmv <filename> <new dirname>"
+  fi
+}
 
 # Windows
 if [ `uname -o` = 'Cygwin' ]; then
