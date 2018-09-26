@@ -1,5 +1,6 @@
 # ls aliases
-alias ls="ls --color=auto -h"
+#alias ls="ls --color=auto -h"
+alias ls="ls -h"
 alias la="ls -A"
 alias ll="ls -l"
 alias lal="ls -Al"
@@ -150,7 +151,7 @@ mkmv() {
 }
 
 # Windows
-if [ `uname -o` = 'Cygwin' ]; then
+if [ -x "uname" ] && [ `uname -o` = 'Cygwin' ]; then
   alias ping="ping -t"
   PATH="$PATH:/c/Program Files (x86)/MSBuild/14.0/Bin"
   alias msbuild="MSBuild.exe"
