@@ -1,6 +1,17 @@
+if [ `uname` = 'Darwin' ]; then
+  JARHAR_OSX=1
+elif [ `uname -o` = 'Cygwin' ]; then
+  JARHAR_CYGWIN=1
+else
+  JARHAR_LINUX=1
+fi
+
 # ls aliases
-#alias ls="ls --color=auto -h"
-alias ls="ls -h"
+if [ -z "$JARHAR_OSX" ]; then
+  alias ls="ls --color=auto -h"
+else
+  alias ls="ls -h -G"
+fi
 alias la="ls -A"
 alias ll="ls -l"
 alias lal="ls -Al"
@@ -151,7 +162,7 @@ mkmv() {
 }
 
 # Windows
-if [ -x "uname" ] && [ `uname -o` = 'Cygwin' ]; then
+if ! [ -z "$JARHAR_CYGWIN" ]; then
   alias ping="ping -t"
   PATH="$PATH:/c/Program Files (x86)/MSBuild/14.0/Bin"
   alias msbuild="MSBuild.exe"
