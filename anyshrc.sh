@@ -208,3 +208,7 @@ if [ -x "$(command -v clang-format-3.8)" ]; then
 fi
 
 alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
+
+if [ -d "$HOME/dotfiles/bin" ]; then
+  PATH=$PATH:$HOME/dotfiles/bin
+fi
