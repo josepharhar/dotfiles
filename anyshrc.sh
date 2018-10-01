@@ -161,6 +161,10 @@ mkmv() {
     echo "Usage: mkmv <filename> <new dirname>"
   fi
 }
+jcmp() {
+  #find $1 -type f -exec sh -c 'md5sum "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - - | sort -k 2
+  find $1 -type f -exec sh -c 'md5sum "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - -
+}
 
 # Windows
 if ! [ -z "$JARHAR_CYGWIN" ]; then
