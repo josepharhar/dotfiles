@@ -1,8 +1,9 @@
+
 " Load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'sheerun/vim-polyglot'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'

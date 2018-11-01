@@ -27,10 +27,18 @@ alias ssr="ssa jarhar@192.168.0.133"
 alias gits="git status"
 alias g="git"
 alias clag="clear && git lag"
-alias clgs="clear && git lag ; gits"
+clgs() {
+  if [[ "$PWD" =~ "$CHROMIUM_DIR" ]]; then
+    # git lag is slow for chromium, use dag instead
+    clear && git dag ; git status
+  else
+    clear && git lag ; git status
+  fi
+}
 alias amend="git add . && git commit --amend --no-edit"
 alias gc="git checkout"
 alias gcb="git checkout -b"
+alias gcbt="git checkout -t origin/master -b"
 alias gre="git reset"
 alias greh="git reset --hard"
 alias grei="git rebase -i"
@@ -216,3 +224,16 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 if [ -d "$HOME/dotfiles/bin" ]; then
   PATH=$PATH:$HOME/dotfiles/bin
 fi
+
+# Chromium
+export CHROMIUM_DIR="${HOME}/chromium/src"
+export CHROMIUM_PATH="${HOME}/chromium/src/out/release/chrome"
+alias gsync="gclient sync --with_branch_heads --with_tags"
+alias anc="autoninja -C"
+alias ancr="anc out/release"
+alias ancrc="ancr chrome"
+alias ancrcr="ancrc && out/release/chrome"
+alias ltestr="anc out/release chrome blink_tests && python third_party/blink/tools/run_web_tests.py --fully-parallel -t release"
+alias ltest="ltestr --no-retry-failures"
+alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
