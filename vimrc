@@ -18,6 +18,7 @@ Plug 'mileszs/ack.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wlangstroth/vim-racket'
 "Plug 'valloric/YouCompleteMe'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 call glaive#Install()
