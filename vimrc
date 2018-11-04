@@ -48,6 +48,7 @@ set bg=dark " for white on black terminals
 "colo koehler " /usr/share/vim/vim74/colors/koehler.vim
 "hi Search cterm=bold ctermbg=darkblue ctermfg=white
 hi Search ctermbg=darkblue ctermfg=white
+hi LineNr ctermfg=DarkBlue
 
 " open all files in arglist when they are loaded to prevent E173: n more files
 " to edit
