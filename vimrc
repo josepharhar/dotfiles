@@ -49,6 +49,7 @@ set bg=dark " for white on black terminals
 "hi Search cterm=bold ctermbg=darkblue ctermfg=white
 hi Search ctermbg=darkblue ctermfg=white
 hi LineNr ctermfg=DarkBlue
+hi LineNr ctermbg=DarkGray
 
 " open all files in arglist when they are loaded to prevent E173: n more files
 " to edit
