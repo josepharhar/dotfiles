@@ -237,3 +237,4 @@ alias ltestr="anc out/release chrome blink_tests && python third_party/blink/too
 alias ltest="ltestr --no-retry-failures"
 alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+alias snap='mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata'

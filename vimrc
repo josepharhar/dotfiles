@@ -20,6 +20,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'wlangstroth/vim-racket'
 "Plug 'valloric/YouCompleteMe'
 Plug 'pangloss/vim-javascript'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 call glaive#Install()
@@ -33,6 +34,8 @@ Glaive codefmt clang_format_style="chromium"
 "let g:formatdef_cpp_style = '"clang-format -style=Chromium"'
 
 let g:ctrlp_follow_symlinks = 1
+
+let g:gitgutter_diff_base = 'master'
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
