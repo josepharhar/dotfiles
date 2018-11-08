@@ -133,7 +133,7 @@ set notimeout             " i like to be pokey
 set ttimeout              " timeout on key-codes
 set ttimeoutlen=100       " timeout on key-codes after 100ms
 set ruler                 " the ruler on the bottom is useful
-set scrolloff=1           " dont let the curser get too close to the edge
+set scrolloff=13          " dont let the curser get too close to the edge
 set showcmd               " Show (partial) command in status line.
 set showmatch             " Show matching brackets.
 "set textwidth=0           " Don't wrap words by default
