@@ -20,3 +20,5 @@ export SHDOTFILE=".bashrc"
 
 #source $HOME/dotfiles/auto_title_screens.bash
 source $HOME/dotfiles/anyshrc.sh
+
+set -o vi
