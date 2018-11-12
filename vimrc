@@ -51,9 +51,17 @@ set bg=dark " for white on black terminals
 "set t_Co=256
 "colo koehler " /usr/share/vim/vim74/colors/koehler.vim
 "hi Search cterm=bold ctermbg=darkblue ctermfg=white
-hi Search ctermbg=darkblue ctermfg=white
-hi LineNr ctermfg=DarkBlue
-hi LineNr ctermbg=DarkGray
+if &t_Co ==# '256'
+  " 256 colors enabled
+  " https://jonasjacek.github.io/colors/
+  hi LineNr ctermbg=232 ctermfg=237
+  hi Search ctermbg=20 ctermfg=white
+else
+  " only 16 colors
+  "hi Search ctermbg=darkblue ctermfg=white
+  "hi LineNr ctermfg=DarkBlue
+  "hi LineNr ctermbg=DarkGray
+endif
 
 " open all files in arglist when they are loaded to prevent E173: n more files
 " to edit

@@ -27,3 +27,4 @@ White=255,255,255
 BoldWhite=255,255,255
 Transparency=low
 BellType=0
+Term=xterm-256color
