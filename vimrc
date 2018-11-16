@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'sheerun/vim-polyglot'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-dispatch'
@@ -21,6 +21,8 @@ Plug 'wlangstroth/vim-racket'
 "Plug 'valloric/YouCompleteMe'
 Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 call glaive#Install()
@@ -33,7 +35,8 @@ Glaive codefmt clang_format_style="chromium"
 " Chiel92/vim-autoformat
 "let g:formatdef_cpp_style = '"clang-format -style=Chromium"'
 
-let g:ctrlp_follow_symlinks = 1
+"let g:ctrlp_follow_symlinks = 1
+nnoremap <c-p> :GFiles<cr>
 
 let g:gitgutter_diff_base = 'master'
 
