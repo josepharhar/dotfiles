@@ -215,15 +215,14 @@ if [ -d "$HOME/.local/bin" ]; then
   PATH=$PATH:$HOME/.local/bin
 fi
 
-if [ -x "$(command -v clang-format-3.8)" ]; then
-  alias clang-format="clang-format-3.8"
-fi
+#if [ -x "$(command -v clang-format-3.8)" ]; then
+#  alias clang-format="clang-format-3.8"
+#fi
 
 alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 
-if [ -d "$HOME/dotfiles/bin" ]; then
-  PATH=$PATH:$HOME/dotfiles/bin
-fi
+[ -d "$HOME/dotfiles/bin" ] && export PATH=$PATH:$HOME/dotfiles/bin
+[ -d "$HOME/homebrew/bin" ] && export PATH=$HOME/homebrew/bin:$PATH
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"

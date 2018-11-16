@@ -13,3 +13,5 @@ bind ^h focus left
 bind ^j focus down
 bind ^k focus up
 bind ^l focus right
+
+term screen-256color
