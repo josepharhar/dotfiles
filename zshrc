@@ -43,10 +43,9 @@ source $HOME/dotfiles/anyshrc.sh
 kcstr
 
 # vi style command line editing
-#set -o vi
 bindkey -v
 bindkey "^?" backward-delete-char
-
+# broken vi mode indicator
 #function zle-line-init zle-keymap-select {
 #    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
 #    RPS2=$RPS1
@@ -54,7 +53,6 @@ bindkey "^?" backward-delete-char
 #}
 #zle -N zle-line-init
 #zle -N zle-keymap-select
-
 #function zle-keymap-select {
 #  zle reset-prompt
 #  zle -R
@@ -68,4 +66,22 @@ bindkey "^?" backward-delete-char
 #RPS1='$(vi_mode_prompt_info)'
 #RPS2=$RPS1
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# .fzf.zsh
+## Setup fzf
+## ---------
+#if [[ ! "$PATH" == */Users/jarhar/fzf/bin* ]]; then
+#  export PATH="$PATH:/Users/jarhar/fzf/bin"
+#fi
+## Auto-completion
+## ---------------
+#[[ $- == *i* ]] && source "/Users/jarhar/fzf/shell/completion.zsh" 2> /dev/null
+## Key bindings
+## ------------
+#source "/Users/jarhar/fzf/shell/key-bindings.zsh"
+if [ -d "$HOME/fzf" ]; then
+  export PATH="$PATH:$HOME/fzf/bin"
+  source "$HOME/fzf/shell/completion.zsh" 2> /dev/null
+  source "$HOME/fzf/shell/key-bindings.zsh"
+fi
