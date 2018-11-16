@@ -67,3 +67,5 @@ bindkey "^?" backward-delete-char
 ## define right prompt, regardless of whether the theme defined it
 #RPS1='$(vi_mode_prompt_info)'
 #RPS2=$RPS1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
