@@ -153,20 +153,21 @@ set virtualedit=block     " let blocks be in virutal edit mode
 
 au! FileType racket setl nocindent
 
-" Screen settings
-" When editing a file, make screen display the name of the file you are editing
-function! SetTitle()
-  if $TERM =~ "^screen"
-    let l:title = 'vim ' . expand('%:t')
-
-    if (l:title != 'vim __Tag_List__')
-      let l:truncTitle = strpart(l:title, 0, 15)
-      silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
-    endif
-  endif
-endfunction
-" Run it every time we change buffers
-autocmd BufEnter,BufFilePost * call SetTitle()
+" This causes :Files from fzf to break the UI for some reason
+"" Screen settings
+"" When editing a file, make screen display the name of the file you are editing
+"function! SetTitle()
+"  if $TERM =~ "^screen"
+"    let l:title = 'vim ' . expand('%:t')
+"
+"    if (l:title != 'vim __Tag_List__')
+"      let l:truncTitle = strpart(l:title, 0, 15)
+"      silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
+"    endif
+"  endif
+"endfunction
+"" Run it every time we change buffers
+"autocmd BufEnter,BufFilePost * call SetTitle()
 
 " Google
 "set makeprg=ninc
