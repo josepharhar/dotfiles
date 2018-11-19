@@ -226,12 +226,17 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
-export CHROMIUM_PATH="${HOME}/chromium/src/out/release/chrome"
+if [ -z "$JARHAR_OSX" ]; then
+  export RELATIVE_CHROMIUM_PATH="out/release/chrome"
+else
+  export RELATIVE_CHROMIUM_PATH="out/release/Chromium.app/Contents/MacOS/Chromium"
+fi
+export CHROMIUM_PATH="${HOME}/chromium/src/${RELATIVE_CHROMIUM_PATH}"
 alias gsync="gclient sync --with_branch_heads --with_tags"
 alias anc="autoninja -C"
 alias ancr="anc out/release"
 alias ancrc="ancr chrome"
-alias ancrcr="ancrc && out/release/chrome"
+alias ancrcr="ancrc && ${RELATIVE_CHROMIUM_PATH}"
 alias ltestr="anc out/release chrome blink_tests && python third_party/blink/tools/run_web_tests.py --fully-parallel -t release"
 alias ltest="ltestr --no-retry-failures"
 alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
