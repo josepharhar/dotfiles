@@ -5,19 +5,19 @@ Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'sheerun/vim-polyglot'
-Plug 'danro/rename.vim'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
+"Plug 'danro/rename.vim'
+"Plug 'tpope/vim-dispatch'
+"Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-sleuth'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-glaive'
-Plug 'google/vim-codefmt'
-Plug 'kana/vim-fakeclip'
-Plug 'rhysd/vim-clang-format'
+"Plug 'google/vim-maktaba'
+"Plug 'google/vim-glaive'
+"Plug 'google/vim-codefmt'
+"Plug 'kana/vim-fakeclip'
+"Plug 'rhysd/vim-clang-format'
 "Plug 'Chiel92/vim-autoformat'
-Plug 'mileszs/ack.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'wlangstroth/vim-racket'
+"Plug 'mileszs/ack.vim'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'wlangstroth/vim-racket'
 "Plug 'valloric/YouCompleteMe'
 Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-gitgutter'
@@ -25,10 +25,10 @@ Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-call glaive#Install()
-"Glaive codefmt plugin[mappings]
-Glaive codefmt clang_format_executable="clang-format-3.8"
-Glaive codefmt clang_format_style="chromium"
+"call glaive#Install()
+""Glaive codefmt plugin[mappings]
+"Glaive codefmt clang_format_executable="clang-format-3.8"
+"Glaive codefmt clang_format_style="chromium"
 
 " rhysd/vim-clang-format
 "let g:clang_format#code_style = 'chromium'
@@ -167,52 +167,6 @@ function! SetTitle()
 endfunction
 " Run it every time we change buffers
 autocmd BufEnter,BufFilePost * call SetTitle()
-
-" Hex editing settings
-"nnoremap <C-H> :Hexmode<CR>
-"inoremap <C-H> <Esc>:Hexmode<CR>
-"vnoremap <C-H> :<C-U>Hexmode<CR>
-" ex command for toggling hex mode - define mapping if desired
-command -bar Hexmode call ToggleHex()
-" helper function to toggle hex mode
-function ToggleHex()
-  " hex mode should be considered a read-only operation
-  " save values for modified and read-only for restoration later,
-  " and clear the read-only flag for now
-  let l:modified=&mod
-  let l:oldreadonly=&readonly
-  let &readonly=0
-  let l:oldmodifiable=&modifiable
-  let &modifiable=1
-  if !exists("b:editHex") || !b:editHex
-    " save old options
-    let b:oldft=&ft
-    let b:oldbin=&bin
-    " set new options
-    setlocal binary " make sure it overrides any textwidth, etc.
-    silent :e " this will reload the file without trickeries 
-              "(DOS line endings will be shown entirely )
-    let &ft="xxd"
-    " set status
-    let b:editHex=1
-    " switch to hex editor
-    %!xxd
-  else
-    " restore old options
-    let &ft=b:oldft
-    if !b:oldbin
-      setlocal nobinary
-    endif
-    " set status
-    let b:editHex=0
-    " return to normal editing
-    %!xxd -r
-  endif
-  " restore values for modified and read only state
-  let &mod=l:modified
-  let &readonly=l:oldreadonly
-  let &modifiable=l:oldmodifiable
-endfunction
 
 " Google
 "set makeprg=ninc
