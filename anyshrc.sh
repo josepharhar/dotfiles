@@ -80,11 +80,6 @@ kcadd () {
   eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
 }
 
-# chrome aliases
-#alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
-alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
-alias chrtest="ninja -j1024 -C out/Release cast_shell_browser_test && out/Release/cast_shell_browser_test --test-launcher-bot-mode --enable-local-file-accesses --ozone-platform=cast --no-sandbox --test-launcher-jobs=1 --test-launcher-summary-output=asdf.log"
-
 # iptables aliases
 alias ipt-list="sudo iptables -t nat -L --line-numbers"
 alias ipt-delete="sudo iptables -t nat -D PREROUTING"
@@ -227,22 +222,22 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
 if [ -z "$JARHAR_OSX" ]; then
-  export RELATIVE_CHROMIUM_PATH="out/release/chrome"
+  export RELATIVE_CHROMIUM_PATH="out/Release/chrome"
 else
-  export RELATIVE_CHROMIUM_PATH="out/release/Chromium.app/Contents/MacOS/Chromium"
+  export RELATIVE_CHROMIUM_PATH="out/Release/Chromium.app/Contents/MacOS/Chromium"
 fi
 export CHROMIUM_PATH="${HOME}/chromium/src/${RELATIVE_CHROMIUM_PATH}"
 alias gsync="gclient sync --with_branch_heads --with_tags"
 alias anc="autoninja -C"
 alias lnc="GOMA_DISABLED=true autoninja -C"
-alias ancr="anc out/release"
-alias lncr="lnc out/release"
+alias ancr="anc out/Release"
+alias lncr="lnc out/Release"
 alias ancrc="ancr chrome"
 alias lncrc="lncr chrome"
 alias ancrt="ancr chrome blink_tests"
 alias lncrt="lncr chrome blink_tests"
 alias ancrcr="ancrc && ${RELATIVE_CHROMIUM_PATH}"
-alias ltestr="anc out/release chrome blink_tests && python third_party/blink/tools/run_web_tests.py --fully-parallel -t release"
+alias ltestr="anc out/Release chrome blink_tests && python third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
 alias ltest="ltestr --no-retry-failures"
 alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
@@ -250,5 +245,10 @@ alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/WebKit/LayoutTests/http/tests/devtools"
 alias snap='mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata'
 brt() {
-  ancr browser_tests && out/release/browser_tests --gtest_filter="$1"
+  ancr browser_tests && out/Release/browser_tests --gtest_filter="$1"
 }
+# old chrome aliases
+##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
+#alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
+#alias chrtest="ninja -j1024 -C out/Release cast_shell_browser_test && out/Release/cast_shell_browser_test --test-launcher-bot-mode --enable-local-file-accesses --ozone-platform=cast --no-sandbox --test-launcher-jobs=1 --test-launcher-summary-output=asdf.log"
+
