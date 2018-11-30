@@ -64,6 +64,7 @@ gdff() {
 }
 alias gfp="git fetch -p"
 alias gfmt="git diff -U0 --no-color HEAD^ | clang-format-diff.py -i -p1"
+alias gg="git grep -i"
 
 # open all files from a list, works with aliases - "vimo gdfnh"
 vimo () {
