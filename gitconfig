@@ -23,6 +23,7 @@
 	gud = help
 	jag = log --all --graph --pretty=format:'%Cred%h%Creset%C(auto)%d%Creset %s %Cgreen%cr %C(bold blue)%an%Creset' --abbrev-commit --date-order
 	jagold = log --all --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order -n 20
+	mb = map-branches
 [clangformat]
 	style = chromium
 	commit = master
