@@ -3,7 +3,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-bufferline'
-"Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'sheerun/vim-polyglot'
 "Plug 'danro/rename.vim'
 "Plug 'tpope/vim-dispatch'
@@ -21,8 +20,13 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plug 'valloric/YouCompleteMe'
 Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+if has("win32unix")
+  " Cygwin
+  Plug 'ctrlpvim/ctrlp.vim'
+else
+  Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+endif
 call plug#end()
 
 "call glaive#Install()
