@@ -28,7 +28,7 @@ alias gits="git status"
 alias g="git"
 alias clag="clear && git lag"
 clgs() {
-  if [[ "$PWD" =~ "$CHROMIUM_DIR" ]]; then
+  if [[ "$PWD" =~ "$CHROMIUM_DIR" ]] || [[ "$PWD" =~ "$CHROMIUM_ALT_DIR" ]]; then
     # git lag is slow for chromium, use dag instead
     clear && git dag ; git status
   else
@@ -222,6 +222,7 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
+export CHROMIUM_ALT_DIR="${HOME}/chromium.alt/src"
 if [ -z "$JARHAR_OSX" ]; then
   export RELATIVE_CHROMIUM_PATH="out/Release/chrome"
 else
