@@ -27,3 +27,9 @@
 [clangformat]
 	style = chromium
 	commit = master
+[grep]
+	lineNumber = true
+[color "grep"]
+	linenumber = green
+	match = red bold
+	filename = magenta

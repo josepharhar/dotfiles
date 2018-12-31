@@ -124,6 +124,7 @@ alias upd="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias oldest="find -type f -printf '%T+ %p\n' | sort | head -n 30"
 alias ssync="rsync -a --progress --delete -v -e \"ssh -T -o Compression=no\"" # https://gist.github.com/KartikTalwar/4393116
 alias csync="rsync -a --progress --delete -v -c -n"
+alias ck="c && !!"
 
 # https://stackoverflow.com/a/17168847
 # usage: hexsearch "\x20\x3e\xaa" os.img
