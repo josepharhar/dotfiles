@@ -44,6 +44,8 @@ nnoremap <c-p> :GFiles<cr>
 nnoremap <c-o> :FZF<cr>
 
 let g:gitgutter_diff_base = 'master'
+" make gitgutter do diffing faster, updatetime is 4000ms by default
+set updatetime=1000
 
 " Line numbers
 "nmap <C-l> :set invnumber<CR>
