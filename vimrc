@@ -15,7 +15,6 @@ Plug 'bling/vim-bufferline'
 "Plug 'rhysd/vim-clang-format'
 "Plug 'Chiel92/vim-autoformat'
 "Plug 'mileszs/ack.vim'
-Plug 'christoomey/vim-tmux-navigator'
 "Plug 'wlangstroth/vim-racket'
 "Plug 'valloric/YouCompleteMe'
 Plug 'pangloss/vim-javascript'
@@ -24,6 +23,7 @@ if has("win32unix")
   " Cygwin
   Plug 'ctrlpvim/ctrlp.vim'
 else
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 endif
