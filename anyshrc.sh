@@ -255,7 +255,7 @@ alias bbt="ltest"
 alias bbs="ancrcr"
 alias lbbt="GOMA_DISABLED=true ltest"
 alias lbbs="GOMA_DISABLED=true ancrcr"
-alias dtfix="npx eslint front_end --fix && npm run closure && git cl format --js"
+alias dtfix="(csd && npx eslint front_end --fix && npm run closure && git cl format --js)"
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
 #alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
