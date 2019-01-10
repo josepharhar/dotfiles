@@ -1,4 +1,3 @@
-
 " Load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-unimpaired'
@@ -19,11 +18,10 @@ Plug 'bling/vim-bufferline'
 "Plug 'valloric/YouCompleteMe'
 Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-gitgutter'
-if has("win32unix")
-  " Cygwin
+Plug 'josepharhar/vim-tmux-navigator'
+if has("win32unix") " Cygwin
   Plug 'ctrlpvim/ctrlp.vim'
-else
-  Plug 'christoomey/vim-tmux-navigator'
+else " not Cygwin
   Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 endif
