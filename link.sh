@@ -20,5 +20,6 @@ link ~/dotfiles/vimrc ~/.vimrc
 link ~/dotfiles/screenrc ~/.screenrc
 link ~/dotfiles/tmux.conf ~/.tmux.conf
 link ~/dotfiles/zshrc ~/.zshrc
+link ~/dotfiles/bashrc ~/.bashrc
 link ~/dotfiles/gitconfig ~/.gitconfig
 link ~/dotfiles/npmrc ~/.npmrc
