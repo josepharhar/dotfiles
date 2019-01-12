@@ -2,6 +2,8 @@ if [ `uname` = 'Darwin' ]; then
   JARHAR_OSX=1
 elif [ `uname -o` = 'Cygwin' ]; then
   JARHAR_CYGWIN=1
+elif [ `uname -o` = 'Msys' ]; then
+  JARHAR_MSYS=1
 else
   JARHAR_LINUX=1
 fi
@@ -228,7 +230,11 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/homebrew/bin" ] && export PATH=$HOME/homebrew/bin:$PATH
 
 # Chromium
-export CHROMIUM_DIR="${HOME}/chromium/src"
+if [ -z "$JARHAR_MSYS" ]; then
+  export CHROMIUM_DIR="${HOME}/chromium/src"
+else
+  export CHROMIUM_DIR="C:/Users/jarhar/chromium/src"
+fi
 export CHROMIUM_ALT_DIR="${HOME}/chromium.alt/src"
 if [ -z "$JARHAR_OSX" ]; then
   export RELATIVE_CHROMIUM_PATH="out/Release/chrome"
@@ -237,22 +243,61 @@ else
 fi
 export CHROMIUM_PATH="${HOME}/chromium/src/${RELATIVE_CHROMIUM_PATH}"
 alias gsync="gclient sync --with_branch_heads --with_tags"
-alias anc="autoninja -C"
+
+if [ -z "$JARHAR_MSYS" ]; then
+  alias cmdWrapper=""
+  sep="/"
+else
+  cmdWrapper() {
+    cmd.exe /S /C "$@"
+  }
+  sep="\\"
+fi
+alias anc="cmdWrapper autoninja -C"
+alias ancr="anc out${sep}Release"
 alias lnc="GOMA_DISABLED=true autoninja -C"
-alias ancr="anc out/Release"
-alias lncr="lnc out/Release"
+alias lncr="lnc out${sep}Release"
 alias ancrc="ancr chrome"
 alias lncrc="lncr chrome"
-alias ancrt="ancr chrome blink_tests"
-alias lncrt="lncr chrome blink_tests"
+alias ancrt="ancr chrome blink_tests browser_tests"
+alias lncrt="lncr chrome blink_tests browser_tests"
 alias ancrcr="ancrc && ${RELATIVE_CHROMIUM_PATH}"
-alias ltestr="anc out/Release chrome blink_tests && python third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
+alias ltestr="anc out${sep}Release chrome blink_tests && python third_party${sep}blink${sep}tools${sep}run_web_tests.py --fully-parallel -t Release"
 alias ltest="ltestr --no-retry-failures"
-alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
-alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+alias ltesta="ltest http${sep}tests${sep}devtools http${sep}tests${sep}inspector-protocol inspector-protocol"
+alias ltestar="ltestr http${sep}tests${sep}devtools http${sep}tests${sep}inspector-protocol inspector-protocol"
+
+#if [ -z "$JARHAR_MSYS" ]; then
+#  alias anc="autoninja -C"
+#  alias ancr="anc out/Release"
+#  alias lnc="GOMA_DISABLED=true autoninja -C"
+#  alias lncr="lnc out/Release"
+#  alias ancrc="ancr chrome"
+#  alias lncrc="lncr chrome"
+#  alias ancrt="ancr chrome blink_tests browser_tests"
+#  alias lncrt="lncr chrome blink_tests browser_tests"
+#  alias ancrcr="ancrc && ${RELATIVE_CHROMIUM_PATH}"
+#else
+#  alias anc="cmd.exe /C autoninja -C"
+#  alias ancr="cmd.exe /C \"anc out\Release\""
+#  alias ancrt="cmd.exe /C \"anc out\Release chrome blink_tests browser_tests\""
+#  alias ancrc="cmd.exe /C \"anc out\Release chrome\""
+#  alias ancrcr="cmd.exe /C \"anc out\Release chrome && out\Release\chrome\""
+#fi
+#if [ -z "$JARHAR_MSYS" ]; then
+#  alias ltestr="anc out/Release chrome blink_tests && cmd.exe /C python third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
+#  alias ltest="ltestr --no-retry-failures"
+#  alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+#  alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+#else
+#  alias ltestr="cmd.exe /C \"autoninja -C out\Release blink_tests && cmd.exe /C python third_party/blink/tools/run_web_tests.py --fully-parallel -t Release\""
+#  alias ltest="ltestr --no-retry-failures"
+#  alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+#  alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+#fi
 alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
-alias snap='mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata'
+alias snap="mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata"
 brt() {
   ancr browser_tests && out/Release/browser_tests --gtest_filter="$1"
 }
@@ -265,4 +310,7 @@ alias dtfix="(csd && npx eslint front_end --fix && npm run closure && git cl for
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
 #alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
 #alias chrtest="ninja -j1024 -C out/Release cast_shell_browser_test && out/Release/cast_shell_browser_test --test-launcher-bot-mode --enable-local-file-accesses --ozone-platform=cast --no-sandbox --test-launcher-jobs=1 --test-launcher-summary-output=asdf.log"
-
+# Windows, must come last for highest precedence
+if ! [ -z "$JARHAR_MSYS" ]; then
+  PATH="/c/Users/jarhar/depot_tools:$PATH"
+fi
