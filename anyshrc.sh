@@ -230,6 +230,7 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/homebrew/bin" ] && export PATH=$HOME/homebrew/bin:$PATH
 
 # Chromium
+alias chr="export PATH=\"/c/Users/jarhar/depot_tools:/c/Program Files/Git/cmd:$PATH\" && export HOME=/c/Users/jarhar && cd /c/Users/jarhar/chromium/src"
 if [ -z "$JARHAR_MSYS" ]; then
   export CHROMIUM_DIR="${HOME}/chromium/src"
 else
@@ -244,12 +245,12 @@ fi
 export CHROMIUM_PATH="${HOME}/chromium/src/${RELATIVE_CHROMIUM_PATH}"
 alias gsync="gclient sync --with_branch_heads --with_tags"
 
-if [ -z "$JARHAR_MSYS" ]; then
+if [ -z "$JARHAR_CYGWIN" ]; then
   alias cmdWrapper=""
   sep="/"
 else
   cmdWrapper() {
-    cmd.exe /S /C "$@"
+    cmd.exe /C "$@"
   }
   sep="\\"
 fi
@@ -267,7 +268,7 @@ alias ltest="ltestr --no-retry-failures"
 alias ltesta="ltest http${sep}tests${sep}devtools http${sep}tests${sep}inspector-protocol inspector-protocol"
 alias ltestar="ltestr http${sep}tests${sep}devtools http${sep}tests${sep}inspector-protocol inspector-protocol"
 
-#if [ -z "$JARHAR_MSYS" ]; then
+#if [ -z "$JARHAR_CYGWIN" ]; then
 #  alias anc="autoninja -C"
 #  alias ancr="anc out/Release"
 #  alias lnc="GOMA_DISABLED=true autoninja -C"
@@ -284,7 +285,7 @@ alias ltestar="ltestr http${sep}tests${sep}devtools http${sep}tests${sep}inspect
 #  alias ancrc="cmd.exe /C \"anc out\Release chrome\""
 #  alias ancrcr="cmd.exe /C \"anc out\Release chrome && out\Release\chrome\""
 #fi
-#if [ -z "$JARHAR_MSYS" ]; then
+#if [ -z "$JARHAR_CYGWIN" ]; then
 #  alias ltestr="anc out/Release chrome blink_tests && cmd.exe /C python third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
 #  alias ltest="ltestr --no-retry-failures"
 #  alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
@@ -295,6 +296,7 @@ alias ltestar="ltestr http${sep}tests${sep}devtools http${sep}tests${sep}inspect
 #  alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 #  alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 #fi
+
 alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
 alias snap="mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata"
