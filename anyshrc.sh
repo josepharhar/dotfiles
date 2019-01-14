@@ -20,8 +20,8 @@ alias l="ll"
 # ssh aliases
 alias ssa="ssh -o StrictHostKeyChecking=no -A"
 alias ssx="DISPLAY=:0.0 ssh -CY"
-alias sse="ssa jarhar@192.168.248.130"
-alias ssr="ssa jarhar@192.168.0.132"
+alias sse="ssa jarhar@192.168.56.132"
+alias ssr="ssa jarhar@192.168.0.141"
 
 # git aliases
 alias gits="git status"
@@ -174,7 +174,7 @@ mkmv() {
 }
 jcmp() {
   #find $1 -type f -exec sh -c 'md5sum "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - - | sort -k 2
-  find $1 -type f -exec sh -c 'md5sum "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - -
+  find $1 -type f -exec sh -c 'md5sum --tag "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - -
 }
 
 # Windows
