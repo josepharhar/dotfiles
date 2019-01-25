@@ -137,6 +137,7 @@ alias ssync="rsync -a --progress --delete -v -e \"ssh -T -o Compression=no\"" # 
 alias csync="rsync -a --progress --delete -v -c -n"
 alias ck="c && !!"
 alias npr="npm run"
+alias nps="npm start"
 
 # https://stackoverflow.com/a/17168847
 # usage: hexsearch "\x20\x3e\xaa" os.img
