@@ -265,7 +265,11 @@ alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-
 alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
-alias snap='mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata'
+if [ -z "$JARHAR_OSX" ]; then
+  alias snap='mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata'
+else
+  alias snap='mkdir -p userdata && chrome-mac/Chromium.app/Contents/MacOS/Chromium --user-data-dir=userdata'
+fi
 brt() {
   ancr browser_tests && out/Release/browser_tests --gtest_filter="$1"
 }
