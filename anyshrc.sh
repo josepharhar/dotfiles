@@ -278,6 +278,8 @@ alias lbbt="GOMA_DISABLED=true ltest"
 alias lbbs="GOMA_DISABLED=true ancrcr"
 alias dtfix="(csd && npx eslint front_end --fix && npm run closure && git cl format --js)"
 alias npc="npr closure"
+alias changeidhook="curl -Lo .git/hooks/commit-msg http://chromium-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg"
+
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
 #alias gng="gn gen out_chromecast_desktop/debug --args='is_chromecast=true is_debug=true use_goma=true chromecast_branding=\"internal\"'"
