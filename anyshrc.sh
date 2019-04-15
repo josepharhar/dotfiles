@@ -236,6 +236,7 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
+export CHROMIUM_SRC="${HOME}/chromium/src"
 export CHROMIUM_ALT_DIR="${HOME}/chromium.alt/src"
 if [ -z "$JARHAR_OSX" ]; then
   export RELATIVE_CHROMIUM_PATH="out/Release/chrome"
