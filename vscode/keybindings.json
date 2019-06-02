@@ -19,5 +19,9 @@
     {
         "key": "ctrl+m",
         "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
     }
 ]

@@ -10,6 +10,17 @@
         {
             "before": ["]", "b"],
             "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["[", "q"],
+            "commands": ["editor.action.marker.nextInFiles"]
+        },
+        {
+            "before": ["]", "q"],
+            "commands": ["editor.action.marker.prevInFiles"]
         }
-    ]
+    ],
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.fontSize": 13,
+    "editor.minimap.enabled": false
 }
