@@ -1,0 +1,15 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "git.path": "C:\\Users\\jarhar\\depot_tools\\git.bat",
+    "window.zoomLevel": 1,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["[", "b"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["]", "b"],
+            "commands": ["workbench.action.nextEditor"]
+        }
+    ]
+}
