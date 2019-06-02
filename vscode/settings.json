@@ -13,14 +13,23 @@
         },
         {
             "before": ["[", "q"],
-            "commands": ["editor.action.marker.nextInFiles"]
+            "commands": ["editor.action.marker.prevInFiles"]
         },
         {
             "before": ["]", "q"],
-            "commands": ["editor.action.marker.prevInFiles"]
+            "commands": ["editor.action.marker.nextInFiles"]
+        },
+        {
+            "before": ["[", "c"],
+            "commands": ["workbench.action.editor.previousChange"]
+        },
+        {
+            "before": ["]", "c"],
+            "commands": ["workbench.action.editor.nextChange"]
         }
     ],
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.fontSize": 13,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2
 }
