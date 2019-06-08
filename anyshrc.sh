@@ -2,6 +2,8 @@ if [ `uname` = 'Darwin' ]; then
   JARHAR_OSX=1
 elif [ `uname -o` = 'Cygwin' ]; then
   JARHAR_CYGWIN=1
+elif [ `uname -o` = 'Msys' ]; then
+  JARHAR_MSYS=1
 else
   JARHAR_LINUX=1
 fi
@@ -88,9 +90,16 @@ kcstr () {
     eval $(keychain --eval --quiet)
   fi
 }
-kcadd () {
-  eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
-}
+if ! [ -z "$JARHAR_MSYS" ]; then
+  kcadd() {
+    eval $(ssh-agent -s)
+    ssh-add ~/.ssh/id_rsa
+  }
+else
+  kcadd () {
+    eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
+  }
+fi
 
 # iptables aliases
 alias ipt-list="sudo iptables -t nat -L --line-numbers"
