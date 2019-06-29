@@ -191,7 +191,7 @@ mkmv() {
 jcmp() {
   #find $1 -type f -exec sh -c 'md5sum "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - - | sort -k 2
   #find $1 -type f -exec sh -c 'md5sum --tag "{}" ; stat --printf="%y\n" "{}" ;' \; | paste -d " " - -
-  TZ=UTC find $1 -type f | sort | xargs -I {} sh -c 'md5sum --tag "{}" ; stat --printf "%y\n" "{}" ;' | paste -d " " - -
+  find $1 -type f | sort | xargs -I {} sh -c 'md5sum --tag "{}" ; TZ=UTC stat --printf "%y\n" "{}" ;' | paste -d " " - -
 }
 
 # Windows
