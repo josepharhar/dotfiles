@@ -1,0 +1,20 @@
+{
+    "vim.hlsearch": true,
+    "vim.autoindent": true,
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-w>": false
+    },
+
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": true,
+    "editor.formatOnType": true,
+    "editor.renderIndentGuides": false,
+    "editor.minimap.enabled": false,
+
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.statusBar.feedback.visible": false,
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": 2
+}
