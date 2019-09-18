@@ -34,6 +34,7 @@
     ],
     "vim.incsearch": true,
     "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "editor.fontSize": 13,
     "editor.minimap.enabled": false,
