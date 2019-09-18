@@ -5,3 +5,4 @@ a.exe
 *.class
 tags
 npm-debug.log
+csp-report.generate-csp-report.php.txt
