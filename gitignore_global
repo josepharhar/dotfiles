@@ -6,3 +6,5 @@ a.exe
 tags
 npm-debug.log
 csp-report.generate-csp-report.php.txt
+*.asdf
+node_modules/
