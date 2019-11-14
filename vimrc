@@ -43,6 +43,7 @@ nnoremap <c-p> :GFiles<cr>
 nnoremap <c-o> :FZF<cr>
 
 let g:gitgutter_diff_base = 'master'
+let g:gitgutter_max_signs = 9999
 " make gitgutter do diffing faster, updatetime is 4000ms by default
 set updatetime=1000
 
