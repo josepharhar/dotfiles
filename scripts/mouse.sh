@@ -11,3 +11,7 @@
 xinput --set-prop 'Logitech USB-PS/2 Optical Mouse' 'libinput Accel Profile Enabled' 0, 1
 # set speed
 xinput --set-prop 'Logitech USB-PS/2 Optical Mouse' 'libinput Accel Speed' 1
+
+# rebind caps lock to control
+# https://askubuntu.com/a/521734
+setxkbmap -layout us -option ctrl:nocaps
