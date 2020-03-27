@@ -243,6 +243,7 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 
 [ -d "$HOME/dotfiles/bin" ] && export PATH=$PATH:$HOME/dotfiles/bin
 [ -d "$HOME/homebrew/bin" ] && export PATH=$HOME/homebrew/bin:$PATH
+[ -d "$HOME/bin" ] && export PATH=$HOME/bin:$PATH
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
