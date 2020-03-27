@@ -40,7 +40,7 @@ call plug#end()
 
 "let g:ctrlp_follow_symlinks = 1
 nnoremap <c-p> :GFiles<cr>
-nnoremap <c-o> :FZF<cr>
+"nnoremap <c-o> :FZF<cr>
 
 let g:gitgutter_diff_base = 'master'
 let g:gitgutter_max_signs = 9999
