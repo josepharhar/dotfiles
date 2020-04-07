@@ -23,7 +23,7 @@ alias l="ll"
 alias ssa="ssh -o StrictHostKeyChecking=no -A"
 alias ssx="DISPLAY=:0.0 ssh -CY"
 alias sse="ssa jarhar@192.168.56.132"
-alias ssr="ssa jarhar@192.168.0.141"
+alias ssr="ssa jarhar@surface.arhar.net"
 
 # git aliases
 alias gits="git status"
