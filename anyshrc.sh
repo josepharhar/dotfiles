@@ -95,6 +95,10 @@ if ! [ -z "$JARHAR_MSYS" ]; then
     eval $(ssh-agent -s)
     ssh-add ~/.ssh/id_rsa
   }
+elif ! [ -z "$JARHAR_OSX" ]; then
+  kcadd() {
+    ssh-add ~/.ssh/id_rsa
+  }
 else
   kcadd () {
     eval $(keychain --eval --quiet id_rsa $HOME/.ssh/id_rsa)
@@ -206,13 +210,6 @@ if [ -x "xset" ] && [ -n "$DISPLAY" ]; then
   xset b off
 fi
 
-# Add sbin folders to path
-PATH=$PATH:/sbin:/usr/sbin
-# Add Chromium depot_tools to path
-if [ -d "$HOME/depot_tools" ]; then
-  PATH=$PATH:$HOME/depot_tools
-fi
-
 # 471 config
 export GLM_INCLUDE_DIR=$HOME/glm
 export GLFW_DIR=$HOME/glfw
@@ -241,9 +238,12 @@ fi
 
 alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 
+[ -d "/sbin" ] && export PATH=$PATH:/sbin
+[ -d "/usr/sbin" ] && export PATH=$PATH:/usr/sbin
+[ -d "$HOME/depot_tools" ] && export PATH=$PATH:$HOME/depot_tools
 [ -d "$HOME/dotfiles/bin" ] && export PATH=$PATH:$HOME/dotfiles/bin
-[ -d "$HOME/homebrew/bin" ] && export PATH=$HOME/homebrew/bin:$PATH
-[ -d "$HOME/bin" ] && export PATH=$HOME/bin:$PATH
+[ -d "$HOME/homebrew/bin" ] && export PATH=$PATH:$HOME/homebrew/bin
+[ -d "$HOME/bin" ] && export PATH=$PATH:$HOME/bin
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
@@ -292,6 +292,8 @@ alias dtfix="(csd && npx eslint front_end --fix && npm run closure && git cl for
 alias npc="npr tsc"
 alias changeidhook="curl -Lo .git/hooks/commit-msg http://chromium-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg"
 alias xvfb="xvfb-run -s \"-screen 0 1024x768x24\""
+alias throttle="sudo dnctl pipe 1 config bw 1000Kbyte/s"
+alias nothrottle="sudo dnctl pipe 1 config bw 0"
 
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
