@@ -255,7 +255,8 @@ else
   export RELATIVE_CHROMIUM_PATH="out/Release/Chromium.app/Contents/MacOS/Chromium"
 fi
 export CHROMIUM_PATH="${HOME}/chromium/src/${RELATIVE_CHROMIUM_PATH}"
-alias gsync="gclient sync --with_branch_heads --with_tags"
+#alias gsync="gclient sync --with_branch_heads --with_tags"
+alias gsync="gclient sync -D"
 alias anc="autoninja -C"
 alias ancr="anc out/Release"
 alias ancrc="ancr chrome"
