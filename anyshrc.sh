@@ -136,7 +136,11 @@ alias cctags="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++
 #alias make="make -j4"
 alias mkcdmake="mkdir build && cd build && cmake .. && make -j4"
 alias rmrf="rm -rf"
-alias findf="find . ! -readable -prune -o -type f -print"
+if [ -z "$JARHAR_OSX" ]; then
+  alias findf="find . ! -readable -prune -o -type f -print"
+else
+  alias findf="find . -type f"
+fi
 alias cmakevs="cmake -G \"Visual Studio 14 2015 Win64\""
 alias cmakevsd="cmakevs -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 alias cmakevsr="cmakevs -DCMAKE_BUILD_TYPE=Release"
