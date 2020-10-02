@@ -159,6 +159,7 @@ set showmatch             " Show matching brackets.
 set virtualedit=block     " let blocks be in virutal edit mode
 
 au! FileType racket setl nocindent
+autocmd FileType markdown setlocal textwidth=80
 
 " This causes :Files from fzf to break the UI for some reason
 "" Screen settings
