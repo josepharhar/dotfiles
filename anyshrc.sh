@@ -297,7 +297,7 @@ alias lbbs="GOMA_DISABLED=true ancrcr"
 alias dtfix="(csd && npx eslint front_end --fix && npm run closure && git cl format --js)"
 alias npc="npr tsc"
 alias changeidhook="curl -Lo .git/hooks/commit-msg http://chromium-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg"
-alias xvfb="xvfb-run -s \"-screen 0 1024x768x24\""
+alias xvfb="xvfb-run -a -s \"-screen 0 1024x768x24\""
 alias throttle="sudo dnctl pipe 1 config bw 1000Kbyte/s"
 alias nothrottle="sudo dnctl pipe 1 config bw 0"
 
