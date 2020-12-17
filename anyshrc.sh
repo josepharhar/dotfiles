@@ -81,7 +81,7 @@ clone() {
 
 # open all files from a list, works with aliases - "vimo gdfnh"
 vimo () {
-  vim `eval $1`
+  vim `eval $@`
 }
 
 # keychain aliases
