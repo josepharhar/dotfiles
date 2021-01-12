@@ -300,6 +300,12 @@ alias changeidhook="curl -Lo .git/hooks/commit-msg http://chromium-review.google
 alias xvfb="xvfb-run -a -s \"-screen 0 1024x768x24\""
 alias throttle="sudo dnctl pipe 1 config bw 1000Kbyte/s"
 alias nothrottle="sudo dnctl pipe 1 config bw 0"
+if ! [ -z "$JARHAR_OSX" ]; then
+  # r508527 is the oldest one that i can still open devtools on with my mac
+  alias bisect="python tools/bisect-builds.py -g 508527 -a mac64 --use-local-cache --"
+else
+  #alias bisect="python tools/bisect-builds.py -a mac64 --use-local-cache --"
+fi
 
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
