@@ -7,6 +7,9 @@
 	pager = less -FMRiX
 	excludesfile = ~/dotfiles/gitignore_global
 	editor = vim
+	autocrlf = false
+	filemode = false
+	precomposeUnicode = true
 [push]
 	default = current
 [alias]
@@ -16,6 +19,8 @@
 	rekt = clean -fdx
 	dag = log --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%ae%Creset' --abbrev-commit --date=relative -n 20
 	daga = log --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%ae%Creset' --abbrev-commit --date=relative
+#  dag = log --pretty=format:'%Cred%h%Creset %Cgreen%cd%C(auto)%d%Creset %s %C(bold blue)%ae%Creset' --abbrev-commit --date=format-local:'%F' -n 20
+#  daga = log --pretty=format:'%Cred%h%Creset %Cgreen%cd%C(auto)%d%Creset %s %C(bold blue)%ae%Creset' --abbrev-commit --date=format-local:'%F %I:%M %p'
 	dag-old = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order -n 20
 	lag = log --all --graph --pretty=format:'%Cred%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%ae%Creset' --abbrev-commit --date=format-local:'%F' -n 20
 	laga = log --all --graph --pretty=format:'%Cred%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%ae%Creset' --abbrev-commit --date=format-local:'%F %I:%M %p'
@@ -36,3 +41,9 @@
 	filename = magenta
 [init]
 	defaultBranch = master
+[gerrit]
+	host = true
+[branch]
+	autosetuprebase = always
+[depot-tools]
+	branch-limit = 9999999
