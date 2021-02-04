@@ -30,7 +30,7 @@ alias gits="git status"
 alias g="git"
 alias clag="clear && git lag"
 clgs() {
-  if [[ "$PWD" =~ "$CHROMIUM_DIR" ]] || [[ "$PWD" =~ "$CHROMIUM_ALT_DIR" ]]; then
+  if [[ "$PWD" =~ "$HOME/chrom" || "$PWD" =~ "$HOME/cro" ]]; then
     # git lag is slow for chromium, use dag instead
     clear && git dag ; git status
   else
@@ -275,8 +275,9 @@ alias lancrcr="GOMA_DISABLED=true ancrcr"
 #alias bb="autoninja -C ${CHROMIUM_DIR}/out/Release chrome && ${CHROMIUM_PATH}"
 alias bb="ancrcr"
 alias lbb="lancrcr"
-alias ltestr="anc out/Release chrome blink_tests && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
+alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
 alias ltest="ltestr --no-retry-failures"
+alias ltestd="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-retry-failures"
 alias lltest="GOMA_DISABLED=true ltest"
 alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
