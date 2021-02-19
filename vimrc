@@ -105,7 +105,7 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
-nnoremap <silent> <C-m> :wincmd q<CR>
+nnoremap <silent> <C-n> :wincmd q<CR>
 
 " ycm
 nnoremap <C-i> :YcmCompleter GoTo<CR>
