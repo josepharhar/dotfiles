@@ -20,6 +20,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-gitgutter'
 Plug 'josepharhar/vim-tmux-navigator'
 Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 if has("win32unix") " Cygwin
   Plug 'ctrlpvim/ctrlp.vim'
 else " not Cygwin
