@@ -215,10 +215,10 @@ if [ -x "xset" ] && [ -n "$DISPLAY" ]; then
 fi
 
 # 471 config
-export GLM_INCLUDE_DIR=$HOME/glm
-export GLFW_DIR=$HOME/glfw
-export GLEW_DIR=$HOME/glew-2.0.0
-export EIGEN3_INCLUDE_DIR=$HOME/eigen-3.2.6
+#export GLM_INCLUDE_DIR=$HOME/glm
+#export GLFW_DIR=$HOME/glfw
+#export GLEW_DIR=$HOME/glew-2.0.0
+#export EIGEN3_INCLUDE_DIR=$HOME/eigen-3.2.6
 
 if [ -x lesspipe ]; then
   eval "$(lesspipe)"
@@ -265,6 +265,7 @@ alias anc="autoninja -C"
 alias ancr="anc out/Release"
 alias ancrc="ancr chrome"
 alias ancrt="ancr chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests"
+alias ancdt="anc out/Debug chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests"
 alias ancrcr="ancrc && ${RELATIVE_CHROMIUM_PATH}"
 alias cr="${RELATIVE_CHROMIUM_PATH}"
 alias lanc="GOMA_DISABLED=true anc"
@@ -274,6 +275,7 @@ alias lancrt="GOMA_DISABLED=true ancrt"
 alias lancrcr="GOMA_DISABLED=true ancrcr"
 #alias bb="autoninja -C ${CHROMIUM_DIR}/out/Release chrome && ${CHROMIUM_PATH}"
 alias bb="ancrcr"
+alias bbd="anc out/Debug chrome && out/Debug/chrome"
 alias lbb="lancrcr"
 alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
 alias ltest="ltestr --no-retry-failures"
