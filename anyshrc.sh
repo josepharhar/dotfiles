@@ -309,7 +309,8 @@ if ! [ -z "$JARHAR_OSX" ]; then
 #else
   #alias bisect="python tools/bisect-builds.py -a mac64 --use-local-cache --"
 fi
-export NINJA_SUMMARIZE_BUILD=1
+#export NINJA_SUMMARIZE_BUILD=1
+export NINJA_STATUS="[%r processes, %f/%t @ %o/s : %es ] "
 
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
