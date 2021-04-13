@@ -208,3 +208,8 @@ set errorformat=[ERROR]\ %f:[%l\\,%v]\ %m
 " TODO :noh temporarily disables hlsearch until next search, make a keybinding pls
 "set clipboard=unnamedplus
 set clipboard=unnamed
+
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChange ctermfg=yellow
