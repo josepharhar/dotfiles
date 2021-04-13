@@ -40,7 +40,7 @@ clgs() {
 alias amend="git add . && git commit --amend --no-edit"
 alias gc="git checkout"
 alias gcb="git checkout -b"
-alias gcbt="git checkout -t origin/master -b"
+alias gcbt="git checkout -t origin/main -b"
 alias gre="git reset"
 alias greh="git reset --hard"
 alias grei="git rebase -i"
