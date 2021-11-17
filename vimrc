@@ -213,3 +213,6 @@ highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChange ctermfg=yellow
+
+"set noendofline
+"set nofixendofline

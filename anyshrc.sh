@@ -264,8 +264,8 @@ alias gsync="gclient sync -D"
 alias anc="autoninja -C"
 alias ancr="anc out/Release"
 alias ancrc="ancr chrome"
-alias ancrt="ancr chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests"
-alias ancdt="anc out/Debug chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests"
+alias ancrt="ancr chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests components_browsertests"
+alias ancdt="anc out/Debug chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests components_browsertests"
 alias ancrcr="ancrc && ${RELATIVE_CHROMIUM_PATH}"
 alias cr="${RELATIVE_CHROMIUM_PATH}"
 alias lanc="GOMA_DISABLED=true anc"
@@ -280,11 +280,19 @@ alias lbb="lancrcr"
 alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
 alias ltest="ltestr --no-retry-failures"
 alias ltestd="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-retry-failures"
+alias ltestdr="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug"
 alias lltest="GOMA_DISABLED=true ltest"
 alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
+alias ltestdar="ltestdr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
+wptest() {
+  autoninja -C out/Release content_shell chrome blink_tests wpt_tests_isolate && (cd testing/scripts && ./run_wpt_tests.py $1)
+}
+#alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
+alias csd="cd third_party/blink/renderer/devtools"
+#alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
 if [ -z "$JARHAR_OSX" ]; then
   alias snap='mkdir -p userdata && chrome-linux/chrome --user-data-dir=userdata'
 else
@@ -311,6 +319,9 @@ if ! [ -z "$JARHAR_OSX" ]; then
 fi
 #export NINJA_SUMMARIZE_BUILD=1
 export NINJA_STATUS="[%r processes, %f/%t @ %o/s : %es ] "
+cluster() {
+  anc out/cluster chrome content_shell && (cd ~/clusterfuzz && xvfb ./reproduce.sh -t "$1" -b ~/chromium/src/out/cluster)
+}
 
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
