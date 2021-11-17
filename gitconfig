@@ -40,7 +40,7 @@
 	match = red bold
 	filename = magenta
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [gerrit]
 	host = true
 [branch]
