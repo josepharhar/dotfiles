@@ -277,10 +277,11 @@ alias lancrcr="GOMA_DISABLED=true ancrcr"
 alias bb="ancrcr"
 alias bbd="anc out/Debug chrome && ${RELATIVE_CHROMIUM_PATH}"
 alias lbb="lancrcr"
-alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release"
+alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release --no-show-results"
 alias ltest="ltestr --no-retry-failures"
-alias ltestd="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-retry-failures"
-alias ltestdr="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug"
+alias ltestd="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-retry-failures --no-show-results"
+alias ltestdr="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-show-results"
+alias cltestd="./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-show-results"
 alias lltest="GOMA_DISABLED=true ltest"
 alias ltesta="ltest http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
@@ -288,7 +289,7 @@ alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
 alias ltestdar="ltestdr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
 wptest() {
-  autoninja -C out/Release content_shell chrome blink_tests wpt_tests_isolate && (cd testing/scripts && ./run_wpt_tests.py $1)
+  autoninja -C out/Debug content_shell chrome blink_tests wpt_tests_isolate && (cd testing/scripts && ./run_wpt_tests.py -t Debug $1)
 }
 #alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csd="cd third_party/blink/renderer/devtools"
