@@ -162,6 +162,7 @@ set virtualedit=block     " let blocks be in virutal edit mode
 
 au! FileType racket setl nocindent
 autocmd FileType markdown,cpp setlocal textwidth=80
+autocmd BufRead,BufNewFile source setlocal textwidth=100 " HTML spec
 
 " This causes :Files from fzf to break the UI for some reason
 "" Screen settings
