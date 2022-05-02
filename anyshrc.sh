@@ -248,6 +248,7 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/dotfiles/bin" ] && export PATH=$PATH:$HOME/dotfiles/bin
 [ -d "$HOME/homebrew/bin" ] && export PATH=$PATH:$HOME/homebrew/bin
 [ -d "$HOME/bin" ] && export PATH=$PATH:$HOME/bin
+[ -d "$HOME/wattsi/bin" ] && export PATH=$PATH:$HOME/wattsi/bin
 
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
@@ -274,8 +275,8 @@ alias lancrc="GOMA_DISABLED=true ancrc"
 alias lancrt="GOMA_DISABLED=true ancrt"
 alias lancrcr="GOMA_DISABLED=true ancrcr"
 #alias bb="autoninja -C ${CHROMIUM_DIR}/out/Release chrome && ${CHROMIUM_PATH}"
-alias bb="ancrcr"
-alias bbd="anc out/Debug chrome && out/Debug/${RELATIVE_CHROMIUM_PATH}"
+alias bb="ancrcr --enable-experimental-web-platform-features"
+alias bbd="anc out/Debug chrome && out/Debug/${RELATIVE_CHROMIUM_PATH} --enable-experimental-web-platform-features"
 alias lbb="lancrcr"
 alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release --no-show-results"
 alias ltest="ltestr --no-retry-failures"
