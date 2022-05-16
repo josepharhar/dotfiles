@@ -324,7 +324,8 @@ export NINJA_STATUS="[%r processes, %f/%t @ %o/s : %es ] "
 cluster() {
   anc out/cluster chrome content_shell && (cd ~/clusterfuzz && xvfb ./reproduce.sh -t "$1" -b ~/chromium/src/out/cluster)
 }
-alias updateprotocol="cp third_party/blink/public/devtools_protocol/browser_protocol.pdl third_party/devtools-frontend/src/third_party/blink/public/devtools_protocol/browser_protocol.pdl && cd third_party/devtools-frontend/src && npm run generate-protocol-resources"
+# TODO add ln -s third_party/inspector-protocol from chromium/src/third_party/inspector-protocol to devtools-frontend/src/third_party/inspector-protocol
+alias updateprotocol="(cp third_party/blink/public/devtools_protocol/browser_protocol.pdl third_party/devtools-frontend/src/third_party/blink/public/devtools_protocol/browser_protocol.pdl && cd third_party/devtools-frontend/src && npm run generate-protocol-resources)"
 
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"

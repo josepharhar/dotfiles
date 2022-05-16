@@ -30,8 +30,8 @@ setopt EXTENDED_HISTORY        # store time in history
 setopt HIST_EXPIRE_DUPS_FIRST  # unique events are more useful
 setopt HIST_VERIFY             # Make those history commands nice
 setopt INC_APPEND_HISTORY      # immediatly insert history into history file
-HISTSIZE=16000                 # spots for duplicates/uniques
-SAVEHIST=15000                 # unique events guarenteed
+HISTSIZE=116000                 # spots for duplicates/uniques
+SAVEHIST=115000                 # unique events guarenteed
 HISTFILE=$HOME/.zsh_history
 setopt histignoredups          # ignore duplicates of the previous event
 
