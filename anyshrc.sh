@@ -69,7 +69,7 @@ alias gfmt="git diff -U0 --no-color HEAD^ | clang-format-diff.py -i -p1"
 alias gg="git grep -i"
 remote() {
   git remote remove ${2:-origin} || true
-  git remote add ${2:-origin} git://github.com/josepharhar/$1 && \
+  git remote add ${2:-origin} https://github.com/josepharhar/$1 && \
   git remote set-url ${2:-origin} --push git@github.com:josepharhar/$1
 }
 clone() {
