@@ -73,7 +73,7 @@ remote() {
   git remote set-url ${2:-origin} --push git@github.com:josepharhar/$1
 }
 clone() {
-  git clone git://github.com/josepharhar/${1} && \
+  git clone https://github.com/josepharhar/${1} && \
   cd $1 && \
   remote $1 && \
   git fetch
