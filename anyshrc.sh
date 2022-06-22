@@ -147,6 +147,7 @@ alias cmakevsr="cmakevs -DCMAKE_BUILD_TYPE=Release"
 alias cmakevsdd="cmakevs -DCMAKE_BUILD_TYPE=Debug"
 alias m="make"
 alias duu="du -sh *"
+alias duuu="du -sh * | sort -rh"
 alias tailf="tail +1f" # https://unix.stackexchange.com/questions/139866/how-do-i-cat-and-follow-a-file
 alias upd="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias oldest="find -type f -printf '%T+ %p\n' | sort | head -n 30"
