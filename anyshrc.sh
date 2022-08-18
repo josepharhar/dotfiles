@@ -156,6 +156,8 @@ alias csync="rsync -a --progress --delete -v -c -n"
 alias ck="c && !!"
 alias npr="npm run"
 alias nps="npm start"
+# WSL port forwarding https://stackoverflow.com/questions/64513964/wsl-2-which-ports-are-automatically-forwarded
+alias wslf="netsh interface portproxy set v4tov4 listenport=8000 listenaddress=0.0.0.0 connectport=8000 connectaddress=\$(wsl hostname -I)"
 
 # https://stackoverflow.com/a/17168847
 # usage: hexsearch "\x20\x3e\xaa" os.img
