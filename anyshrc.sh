@@ -292,9 +292,7 @@ alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspecto
 alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
 alias ltestdar="ltestdr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
-wptest() {
-  autoninja -C out/Debug content_shell chrome blink_tests wpt_tests_isolate && (cd testing/scripts && ./run_wpt_tests.py -t Debug $1)
-}
+alias wptest="autoninja -C out/Debug content_shell chrome blink_tests wpt_tests_isolate && ./third_party/blink/tools/run_wpt_tests.py -t Debug"
 #alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csd="cd third_party/blink/renderer/devtools"
 #alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
