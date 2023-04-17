@@ -316,7 +316,7 @@ alias throttle="sudo dnctl pipe 1 config bw 1000Kbyte/s"
 alias nothrottle="sudo dnctl pipe 1 config bw 0"
 if ! [ -z "$JARHAR_OSX" ]; then
   # r508527 is the oldest one that i can still open devtools on with my mac
-  alias bisect="python tools/bisect-builds.py -g 508527 -a mac64 --use-local-cache --"
+  alias bisect="./tools/bisect-builds.py -g 508527 -a mac64 --use-local-cache --"
 #else
   #alias bisect="python tools/bisect-builds.py -a mac64 --use-local-cache --"
 fi
