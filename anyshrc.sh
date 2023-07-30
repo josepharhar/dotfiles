@@ -253,6 +253,10 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/bin" ] && export PATH=$PATH:$HOME/bin
 [ -d "$HOME/wattsi/bin" ] && export PATH=$PATH:$HOME/wattsi/bin
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
 export CHROMIUM_SRC="${HOME}/chromium/src"
