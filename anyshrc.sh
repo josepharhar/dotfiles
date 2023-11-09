@@ -259,6 +259,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+jpg_add_edit() {
+  for file in *.jpg; do
+    newname="${file%.jpg}_edit.jpg"
+    echo "$file -> $newname"
+    mv "$file" "$newname"
+  done
+}
+
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
 export CHROMIUM_SRC="${HOME}/chromium/src"
