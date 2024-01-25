@@ -1,6 +1,10 @@
 # Prompt
 autoload -U colors && colors
-PS1="%B%{${fg[yellow]}%}%n%{${fg[cyan]}%}@%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~ %{${fg[yellow]}%}%% %b%{${fg[default]}%}"
+if [ `uname` = 'Darwin' ]; then
+  PS1="%B%{${fg[magenta]}%}%n%{${fg[yellow]}%}@%{${fg[magenta]}%}%m %{${fg[yellow]}%}%(7~,.../,)%6~ %{${fg[magenta]}%}%% %b%{${fg[default]}%}"
+else
+  PS1="%B%{${fg[yellow]}%}%n%{${fg[cyan]}%}@%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~ %{${fg[yellow]}%}%% %b%{${fg[default]}%}"
+fi
 #PS1="%{${fg[green]}%}%B[%{${fg[yellow]}%}%m %{${fg[cyan]}%}%(7~,.../,)%6~%{${fg[green]}%}] %b%{${fg[default]}%}"
 #RPROMPT="%B%(7~,.../,)%6~%b}"
 
