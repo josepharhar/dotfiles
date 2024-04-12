@@ -267,6 +267,10 @@ jpg_add_edit() {
   done
 }
 
+slowdown() {
+  noglob ffmpeg -i $1 -af asetrate=44100*0.5,aresample=44100 $1.0.5.mp3
+}
+
 # Chromium
 export CHROMIUM_DIR="${HOME}/chromium/src"
 export CHROMIUM_SRC="${HOME}/chromium/src"
