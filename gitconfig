@@ -10,6 +10,8 @@
 	autocrlf = false
 	filemode = false
 	precomposeUnicode = true
+	untrackedCache = true
+	fsmonitor = true
 [push]
 	default = current
 [alias]
