@@ -256,9 +256,10 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/bin" ] && export PATH=$PATH:$HOME/bin
 [ -d "$HOME/wattsi/bin" ] && export PATH=$PATH:$HOME/wattsi/bin
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# nvm.sh significantly slows down shell startup time
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 jpg_add_edit() {
   for file in *.jpg; do
@@ -300,10 +301,11 @@ alias lancrcr="GOMA_DISABLED=true ancrcr"
 #alias bb="autoninja -C ${CHROMIUM_DIR}/out/Release chrome && ${CHROMIUM_PATH}"
 alias bb="ancrcr --enable-experimental-web-platform-features --use-mock-keychain --disable-features=DialMediaRouteProvider"
 alias bbd="anc out/Debug chrome && out/Debug/${RELATIVE_CHROMIUM_PATH} --enable-experimental-web-platform-features"
-alias lbb="autoninja --offline -C out/release chrome && ${CHROMIUM_PATH} --enable-experimental-web-platform-features"
+alias lbb="autoninja --offline -C out/Release chrome && ${CHROMIUM_PATH} --enable-experimental-web-platform-features"
 alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release --no-show-results"
 alias ltest="ltestr --no-retry-failures"
 alias ltestd="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-retry-failures --no-show-results"
+alias lltestd="anc --offline out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-retry-failures --no-show-results"
 alias ltestdr="anc out/Debug blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-show-results"
 alias cltestd="./third_party/blink/tools/run_web_tests.py --fully-parallel -t Debug --no-show-results --no-retry-failures"
 alias cltest="./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release --no-show-results --no-retry-failures"
@@ -348,6 +350,7 @@ cluster() {
 }
 # TODO add ln -s third_party/inspector-protocol from chromium/src/third_party/inspector-protocol to devtools-frontend/src/third_party/inspector-protocol
 alias updateprotocol="(cp third_party/blink/public/devtools_protocol/browser_protocol.pdl third_party/devtools-frontend/src/third_party/blink/public/devtools_protocol/browser_protocol.pdl && cd third_party/devtools-frontend/src && npm run generate-protocol-resources)"
+alias push0="git push origin HEAD:refs/for/main"
 alias push1="git push origin HEAD:refs/for/main%l=Commit-Queue+1"
 alias push2="git push origin HEAD:refs/for/main%l=Commit-Queue+2"
 
