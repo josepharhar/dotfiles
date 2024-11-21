@@ -295,7 +295,7 @@ alias ancrt="ancr chrome content_shell blink_tests wpt_tests_isolate content_bro
 alias ancd="anc out/Debug chrome content_shell"
 alias ancdt="anc out/Debug chrome content_shell blink_tests wpt_tests_isolate content_browsertests browser_tests interactive_ui_tests components_browsertests unit_tests"
 alias ancrcr="ancrc && out/Release/${RELATIVE_CHROMIUM_PATH}"
-alias cr="out/Release/${RELATIVE_CHROMIUM_PATH}"
+alias cr="out/Release/${RELATIVE_CHROMIUM_PATH} --enable-experimental-web-platform-features"
 alias lanc="GOMA_DISABLED=true anc"
 alias lancr="GOMA_DISABLED=true ancr"
 alias lancrc="GOMA_DISABLED=true ancrc"
