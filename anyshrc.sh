@@ -37,7 +37,8 @@ clgs() {
     clear && git lag ; git status
   fi
 }
-alias amend="git add . && git commit --amend --no-edit"
+alias gad="git status -s | cut -c4- | xargs git add"
+alias amend="gad && git commit --amend --no-edit"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gcbt="git checkout -t origin/main -b"
@@ -257,9 +258,11 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/wattsi/bin" ] && export PATH=$PATH:$HOME/wattsi/bin
 
 # nvm.sh significantly slows down shell startup time
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvminit() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
 
 jpg_add_edit() {
   for file in *.jpg; do
@@ -301,6 +304,8 @@ alias lancrcr="GOMA_DISABLED=true ancrcr"
 #alias bb="autoninja -C ${CHROMIUM_DIR}/out/Release chrome && ${CHROMIUM_PATH}"
 alias bb="ancrcr --enable-experimental-web-platform-features --use-mock-keychain --disable-features=DialMediaRouteProvider"
 alias bbd="anc out/Debug chrome && out/Debug/${RELATIVE_CHROMIUM_PATH} --enable-experimental-web-platform-features"
+alias bcs="autoninja -C out/Release content_shell && out/Release/content_shell --enable-experimental-web-platform-features"
+alias bcsd="autoninja -C out/Debug content_shell && out/Debug/content_shell --enable-experimental-web-platform-features"
 alias lbb="autoninja --offline -C out/Release chrome && ${CHROMIUM_PATH} --enable-experimental-web-platform-features"
 alias ltestr="anc out/Release blink_tests content_shell && ./third_party/blink/tools/run_web_tests.py --fully-parallel -t Release --no-show-results"
 alias ltest="ltestr --no-retry-failures"
