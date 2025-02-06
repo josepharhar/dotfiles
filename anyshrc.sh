@@ -256,6 +256,7 @@ alias reload="source $HOME/$SHDOTFILE && echo \"$SHDOTFILE reloaded\""
 [ -d "$HOME/homebrew/bin" ] && export PATH=$PATH:$HOME/homebrew/bin
 [ -d "$HOME/bin" ] && export PATH=$PATH:$HOME/bin
 [ -d "$HOME/wattsi/bin" ] && export PATH=$PATH:$HOME/wattsi/bin
+[ -d "$HOME/.cargo/bin" ] && export PATH=$PATH:$HOME/.cargo/bin
 
 # nvm.sh significantly slows down shell startup time
 nvminit() {
@@ -303,6 +304,7 @@ alias lancrt="GOMA_DISABLED=true ancrt"
 alias lancrcr="GOMA_DISABLED=true ancrcr"
 #alias bb="autoninja -C ${CHROMIUM_DIR}/out/Release chrome && ${CHROMIUM_PATH}"
 alias bb="ancrcr --enable-experimental-web-platform-features --use-mock-keychain --disable-features=DialMediaRouteProvider"
+alias cbb="cr --enable-experimental-web-platform-features --use-mock-keychain --disable-features=DialMediaRouteProvider"
 alias bbd="anc out/Debug chrome && out/Debug/${RELATIVE_CHROMIUM_PATH} --enable-experimental-web-platform-features"
 alias bcs="autoninja -C out/Release content_shell && out/Release/content_shell --enable-experimental-web-platform-features"
 alias bcsd="autoninja -C out/Debug content_shell && out/Debug/content_shell --enable-experimental-web-platform-features"
@@ -320,7 +322,8 @@ alias ltestar="ltestr http/tests/devtools http/tests/inspector-protocol inspecto
 alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
 alias ltestdar="ltestdr http/tests/devtools http/tests/inspector-protocol inspector-protocol"
-alias wptest="autoninja -C out/Debug chrome_wpt_tests && ./third_party/blink/tools/run_wpt_tests.py -t Debug"
+alias wptest="autoninja -C out/Debug headless_shell_wpt && ./third_party/blink/tools/run_wpt_tests.py -t Debug --no-show-results --no-retry-failures"
+alias cwptest="./third_party/blink/tools/run_wpt_tests.py -t Debug --no-show-results --no-retry-failures"
 #alias csd="cd ${CHROMIUM_DIR}/third_party/blink/renderer/devtools"
 alias csd="cd third_party/blink/renderer/devtools"
 #alias csdt="cd ${CHROMIUM_DIR}/third_party/blink/web_tests/http/tests/devtools"
