@@ -21,6 +21,10 @@ export SHDOTFILE=".bashrc"
 #source $HOME/dotfiles/auto_title_screens.bash
 source $HOME/dotfiles/anyshrc.sh
 
+slowdown() {
+  ffmpeg -i $1 -af asetrate=44100*0.5,aresample=44100 $1.0.5.mp3
+}
+
 set -o vi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
