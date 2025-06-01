@@ -219,3 +219,6 @@ highlight GitGutterChange ctermfg=yellow
 
 "set noendofline
 "set nofixendofline
+
+" Adds hex code of focused character to status line
+set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
