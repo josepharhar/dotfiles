@@ -264,7 +264,9 @@ nvminit() {
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
-eval "$(fnm env)"
+if command -v fnm &>/dev/null; then
+  eval "$(fnm env)"
+fi
 
 jpg_add_edit() {
   for file in *.jpg; do
