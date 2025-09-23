@@ -45,7 +45,7 @@ alias gcbt="git checkout -t origin/main -b"
 alias gre="git reset"
 alias greh="git reset --hard"
 alias grei="git rebase -i"
-alias grea="git rebase-update --no-fetch"
+alias grea="git rebase-update --no-fetch --no-squash"
 alias gb="git branch"
 alias gbd="git branch -D"
 alias gba="git branch -a"
@@ -366,6 +366,15 @@ alias updateprotocol="(cp third_party/blink/public/devtools_protocol/browser_pro
 alias push0="git push origin HEAD:refs/for/main"
 alias push1="git push origin HEAD:refs/for/main%l=Commit-Queue+1"
 alias push2="git push origin HEAD:refs/for/main%l=Commit-Queue+2"
+lefr() {
+  stder="$(find out/Debug/layout-test-results -type f | grep stderr | head -n 1)"
+  diff="$(find out/Debug/layout-test-results -type f | grep diff.txt | head -n 1)"
+  if [[ -z $stder ]]; then
+    less -F $diff
+  else
+    less -F $stder
+  fi
+}
 
 # old chrome aliases
 ##alias gng="gn gen out/Default --args='is_chromecast=true is_debug=true"
