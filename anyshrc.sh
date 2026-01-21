@@ -373,11 +373,14 @@ alias push0="git push origin HEAD:refs/for/main"
 alias push1="git push origin HEAD:refs/for/main%l=Commit-Queue+1"
 alias push2="git push origin HEAD:refs/for/main%l=Commit-Queue+2"
 lefr() {
-  stder="$(find out/Debug/layout-test-results -type f | grep stderr | head -n 1)"
+  stder="$(find out/Debug/layout-test-results -type f | grep stderr | grep -v wptserve_stderr | head -n 1)"
   diff="$(find out/Debug/layout-test-results -type f | grep diff.txt | head -n 1)"
-  if [[ -z $stder ]]; then
+  echo "stder: $stder"
+  echo "diff: $diff"
+  if [[ -n $diff ]]; then
     less -F $diff
-  else
+  fi
+  if [[ -n $stder ]]; then
     less -F $stder
   fi
 }
