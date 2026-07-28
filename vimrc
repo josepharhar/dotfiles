@@ -222,3 +222,15 @@ highlight GitGutterChange ctermfg=yellow
 
 " Adds hex code of focused character to status line
 set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+
+" Remove traiing whitespace when saving files
+function! <SID>StripTrailingWhitespaces()
+  if !&binary && &filetype != 'diff'
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+  endif
+endfun
+"autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre,FileWritePre,FileAppendPre,FilterWritePre *
+  \ :call <SID>StripTrailingWhitespaces()
