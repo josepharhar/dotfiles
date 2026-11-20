@@ -45,7 +45,7 @@ alias gcbt="git checkout -t origin/main -b"
 alias gre="git reset"
 alias greh="git reset --hard"
 alias grei="git rebase -i"
-alias grea="git rebase-update --no-fetch --no-squash"
+alias grea="git rebase-update --no-fetch --no-squash --skip-worktrees"
 alias fgrea="git fetch origin && git checkout origin/main && gclient sync -D && git rebase-update --no-fetch --no-squash"
 alias gb="git branch"
 alias gbd="git branch -D"
@@ -83,6 +83,7 @@ clone() {
   remote $1 && \
   git fetch
 }
+alias grec="git -c core.editor=true rebase --continue"
 
 # open all files from a list, works with aliases - "vimo gdfnh"
 vimo () {

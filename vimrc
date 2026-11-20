@@ -163,6 +163,7 @@ set virtualedit=block     " let blocks be in virutal edit mode
 au! FileType racket setl nocindent
 autocmd FileType markdown,cpp setlocal textwidth=80
 autocmd BufRead,BufNewFile source setlocal textwidth=100 " HTML spec
+autocmd BufRead,BufNewFile source set colorcolumn=101
 autocmd BufRead,BufNewFile dom.bs setlocal textwidth=100 " DOM spec
 autocmd BufRead,BufNewFile fullscreen.bs setlocal textwidth=100 " Fullscreen spec
 
